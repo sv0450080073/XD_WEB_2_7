@@ -22,8 +22,7 @@ namespace XD_WEB.Web.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+         
             return View();
         }
     }
