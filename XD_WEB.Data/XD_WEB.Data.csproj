@@ -58,6 +58,10 @@
       <Project>{e62e5d1b-ad5f-40c1-a929-190979394643}</Project>
       <Name>XD_WEB.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XD_WEB.Model\XD_WEB.Model.csproj">
+      <Project>{78ecb5db-e729-4765-8614-43df70cd6f17}</Project>
+      <Name>XD_WEB.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
