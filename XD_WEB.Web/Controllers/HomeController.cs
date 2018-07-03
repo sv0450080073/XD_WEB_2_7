@@ -22,7 +22,7 @@ namespace XD_WEB.Web.Controllers
 
         public ActionResult Contact()
         {
-         
+            ViewBag.Message = "I love you";
             return View();
         }
     }
