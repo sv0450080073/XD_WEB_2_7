@@ -9,12 +9,16 @@ namespace XD_WEB.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ProductID { set; get; }
-
+        [Key]
+        [MaxLength(256)]
+        [Column(TypeName ="varchar")]
         public string TagID { set; get; }
 
         //khóa ngoại
 
         [ForeignKey("ProductID")]
         public virtual Product Product { set; get; }
+        [ForeignKey("TagID")]
+        public virtual Tag Tag { set; get; }
     }
 }

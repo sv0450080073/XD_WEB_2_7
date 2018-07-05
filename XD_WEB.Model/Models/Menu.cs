@@ -11,9 +11,11 @@ namespace XD_WEB.Model.Models
         public int ID { set; get; }
 
         [Required]
+        [MaxLength(50)]
         public string Name { set; get; }
 
         [Required]
+        [MaxLength(256)]
         public string URL { set; get; }
 
         public int? DisplayOrder { set; get; }
@@ -24,6 +26,7 @@ namespace XD_WEB.Model.Models
         [ForeignKey("GroupID")] // khóa ngoại
         public virtual MenuGroup MenuGroup { set; get; }
 
+        [MaxLength(20)]
         public string Target { set; get; }
 
         [Required]

@@ -7,10 +7,11 @@ namespace XD_WEB.Model.Models
     public class OrderDetail
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public long ProductID { set; get; }
+        [Key]
         public long OrderID { set; get; }
-        public int? Quantity { set; get; }
+        public int Quantity { set; get; }
         public decimal Price { set; get; }
 
         //khóa ngoại

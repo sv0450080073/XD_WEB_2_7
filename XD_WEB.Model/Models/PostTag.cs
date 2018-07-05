@@ -7,12 +7,17 @@ namespace XD_WEB.Model.Models
     public class PostTag
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    
         public int PostID { set; get; }
-
+        [Key]
+        [Column(TypeName="varchar")]
+        [MaxLength(256)]
         public string TagID { set; get; }
-        //khóa ngoại 
+
+        //khóa ngoại
         [ForeignKey("PostID")]
         public virtual Post Post { set; get; }
+        [ForeignKey("TagID")]
+        public virtual Tag Tag { set; get; }
     }
 }

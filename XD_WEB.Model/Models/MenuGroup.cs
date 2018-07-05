@@ -8,10 +8,11 @@ namespace XD_WEB.Model.Models
     public class MenuGroup
     {
         [Key]
-       [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
 
         [Required] //ko cho pheeps null
+        [MaxLength(50)]
         public string Name { set; get; }
 
         public virtual IEnumerable<Menu> Menus { set; get; } //quan hệ khóa ngoại

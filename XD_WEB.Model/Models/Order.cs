@@ -18,12 +18,15 @@ namespace XD_WEB.Model.Models
         public long CustomerID { set; get; }
 
         [Required]
+        [MaxLength(50)]
         public string ShipName { set; get; }
-
+        [MaxLength(256)]
         public string ShipMobile { set; get; }
+        [MaxLength(256)]
         public string ShipAddress { set; get; }
 
         [Required]
+        [MaxLength(256)]
         public string ShipEmail { set; get; }
 
         public int? Status { set; get; }

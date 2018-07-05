@@ -8,11 +8,14 @@ namespace XD_WEB.Model.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [MaxLength(256)]
         public string ID { set; get; }
 
         [Required]
+        [MaxLength(256)]
         public string Name { set; get; }
-
+        [MaxLength(256)]
+        [Required]
         public string Type { set; get; }
     }
 }

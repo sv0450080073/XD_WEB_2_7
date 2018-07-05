@@ -7,9 +7,10 @@ namespace XD_WEB.Model.Models
     public class Footer
     {
         [Key]
+        [MaxLength(50)]
         public string ID { set; get; }
 
-        [Required]
+        [Required] //ko cho phép null
         public string Content { set; get; }
 
         [Required]

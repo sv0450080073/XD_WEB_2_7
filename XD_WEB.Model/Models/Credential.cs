@@ -8,6 +8,7 @@ namespace XD_WEB.Model.Models
     {
         [Key]
         public string UserGroupID { set; get; }
+
         public string RoleID { set; get; }
     }
 }
