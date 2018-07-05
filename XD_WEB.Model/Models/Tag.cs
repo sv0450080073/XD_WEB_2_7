@@ -9,6 +9,7 @@ namespace XD_WEB.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [MaxLength(256)]
+        [Column(TypeName ="varchar")]
         public string ID { set; get; }
 
         [Required]

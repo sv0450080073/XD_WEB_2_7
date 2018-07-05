@@ -27,6 +27,7 @@ namespace XD_WEB.Model.Models
         //khóa ngoại
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { set; get; }
+
         [MaxLength(256)]
         public string Image { set; get; }
         [MaxLength(500)]
@@ -39,6 +40,6 @@ namespace XD_WEB.Model.Models
         public int? ViewCount { set; get; }
 
         //khóa chính
-        public virtual IEnumerable<PostTag> PostTags { set; get; }
+       /* public virtual IEnumerable<PostTag> PostTags { set; get; }*/
     }
 }

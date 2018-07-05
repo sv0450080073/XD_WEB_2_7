@@ -22,11 +22,12 @@ namespace XD_WEB.Model.Models
         [Column(TypeName ="varchar")]
         public string Alias { set; get; }
         [Required]
-        public int CategoryID { set; get; }
+        public long CategoryID { set; get; }
         [MaxLength(256)]
         public string Image { set; get; }
 
-        public XElement MoreImages { set; get; } // kiểu xml -->XElement
+        [Column(TypeName ="xml")]
+        public string MoreImages { set; get; } // kiểu xml -->XElement
         public decimal Price { set; get; }
         public decimal? PromotionPrice { set; get; }  //?có thể null
         public int? Warranty { set; get; }
@@ -43,6 +44,6 @@ namespace XD_WEB.Model.Models
         public virtual ProductCategory ProductCategory { set; get; }
 
         /*public virtual IEnumerable<Order> Orders { set; get; }
-        public virtual IEnumerable<ProductTag> ProductTags { set; get; } //khóa chính tham chiếu*/
+        public virtual IEnumerable<ProductTag> ProductTags { set; get; }*/ //khóa chính tham chiếu
     }
 }
