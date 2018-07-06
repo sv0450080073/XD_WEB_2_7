@@ -3,8 +3,9 @@ using XD_WEB.Model.Models;
 
 namespace XD_WEB.Data.Repositories
 {
-    public interface IPostCateRepository
-    { }
+    public interface IPostCateRepository : IRepository<PostCategory>
+    {
+    }
 
     public class PostCategoryRepository : RepositoryBase<PostCategory>, IPostCateRepository
 

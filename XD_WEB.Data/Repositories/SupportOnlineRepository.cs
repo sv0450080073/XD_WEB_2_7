@@ -3,7 +3,7 @@ using XD_WEB.Model.Models;
 
 namespace XD_WEB.Data.Repositories
 {
-    public interface ISupportOnlineRepository
+    public interface ISupportOnlineRepository : IRepository<SupportOnline>
     { }
 
     public class SupportOnlineRepository : RepositoryBase<SupportOnline>, ISupportOnlineRepository

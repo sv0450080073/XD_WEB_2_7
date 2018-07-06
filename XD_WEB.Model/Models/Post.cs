@@ -40,6 +40,6 @@ namespace XD_WEB.Model.Models
         public int? ViewCount { set; get; }
 
         //khóa chính
-       /* public virtual IEnumerable<PostTag> PostTags { set; get; }*/
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
     }
 }

@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XD_WEB.Data.Infrastructure
 {
-   public abstract  class RepositoryBase<T>:IRepository<T> where T :class
+    public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
-
         #region Properties
-        private   XD_WEB_DBContext dataContext;
+
+        private XD_WEB_DBContext dataContext;
         private readonly IDbSet<T> dbSet;
 
         protected IDbFactory DbFactory
         {
             get;
-           private set;
+            private set;
         }
 
         protected XD_WEB_DBContext DbContext
         {
             get { return dataContext ?? (dataContext = DbFactory.Init()); }
         }
-        #endregion
+
+        #endregion Properties
 
         protected RepositoryBase(IDbFactory dbFactory)
         {
@@ -34,6 +33,7 @@ namespace XD_WEB.Data.Infrastructure
         }
 
         #region Implementation
+
         public virtual void Add(T entity)
         {
             dbSet.Add(entity);
@@ -50,6 +50,13 @@ namespace XD_WEB.Data.Infrastructure
             dbSet.Remove(entity);
         }
 
+        //mới thêm vô
+        public virtual void Delete(int id)
+        {
+            var entity = dbSet.Find(id);
+            dbSet.Remove(entity);
+        }
+
         public virtual void DeleteMulti(Expression<Func<T, bool>> where)
         {
             IEnumerable<T> objects = dbSet.Where<T>(where).AsEnumerable();
@@ -58,15 +65,14 @@ namespace XD_WEB.Data.Infrastructure
         }
 
         public virtual T GetSingleById(int id)
-       {
-          return dbSet.Find(id);
+        {
+            return dbSet.Find(id);
         }
 
         public virtual IEnumerable<T> GetMany(Expression<Func<T, bool>> where, string includes)
         {
             return dbSet.Where(where).ToList();
         }
-
 
         public virtual int Count(Expression<Func<T, bool>> where)
         {
@@ -98,7 +104,7 @@ namespace XD_WEB.Data.Infrastructure
             if (includes != null && includes.Count() > 0)
             {
                 var query = dataContext.Set<T>().Include(includes.First());
-                foreach (var include in includes.Skip(1))                    query = query.Include(include);
+                foreach (var include in includes.Skip(1)) query = query.Include(include);
                 return query.Where<T>(predicate).AsQueryable<T>();
             }
 
@@ -112,15 +118,15 @@ namespace XD_WEB.Data.Infrastructure
 
             //HANDLE INCLUDES FOR ASSOCIATED OBJECTS IF APPLICABLE
             if (includes != null && includes.Count() > 0)
-           {
-                var query = dataContext.Set<T>().Include(includes.First());               
-                    foreach (var include in includes.Skip(1))
+            {
+                var query = dataContext.Set<T>().Include(includes.First());
+                foreach (var include in includes.Skip(1))
                     query = query.Include(include);
                 _resetSet = predicate != null ? query.Where<T>(predicate).AsQueryable() : query.AsQueryable();
-           }
+            }
             else
             {
-               _resetSet = predicate != null ? dataContext.Set<T>().Where<T>(predicate).AsQueryable() : dataContext.Set<T>().AsQueryable();
+                _resetSet = predicate != null ? dataContext.Set<T>().Where<T>(predicate).AsQueryable() : dataContext.Set<T>().AsQueryable();
             }
 
             _resetSet = skipCount == 0 ? _resetSet.Take(size) : _resetSet.Skip(skipCount).Take(size);
@@ -135,15 +141,11 @@ namespace XD_WEB.Data.Infrastructure
 
         public T GetSingleBy(int id)
         {
-            throw new NotImplementedException();
+            return dbSet.Find(id);
         }
-        #endregion
 
 
 
-
-
-
-
+        #endregion Implementation
     }
 }

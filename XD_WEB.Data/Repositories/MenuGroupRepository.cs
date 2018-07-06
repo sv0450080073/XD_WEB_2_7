@@ -3,7 +3,7 @@ using XD_WEB.Model.Models;
 
 namespace XD_WEB.Data.Repositories
 {
-    public interface IMenuGroupRepository
+    public interface IMenuGroupRepository :IRepository<MenuGroup>
     {
     }
 

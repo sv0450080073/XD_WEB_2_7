@@ -12,9 +12,12 @@ namespace XD_WEB.Data.Infrastructure
 
         void Delete(T entity);
 
+        // mới thêm nha
+        void Delete(int id);
+
         void DeleteMulti(Expression<Func<T, bool>> where);
 
-        T GetSingleBy(int id);
+        T GetSingleById(int id);
 
         T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null);
 
