@@ -37,6 +37,7 @@ namespace XD_WEB.Data
         public DbSet<UserGroup> userGroups { set; get; }
 
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
+        public DbSet<Error> Errors { set; get; }
 
         protected  override void OnModelCreating(DbModelBuilder builder)
         {

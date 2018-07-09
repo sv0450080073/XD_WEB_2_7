@@ -3,11 +3,11 @@ using XD_WEB.Model.Models;
 
 namespace XD_WEB.Data.Repositories
 {
-    public interface IPostCateRepository : IRepository<PostCategory>
+    public interface IPostCategoryRepository : IRepository<PostCategory>
     {
     }
 
-    public class PostCategoryRepository : RepositoryBase<PostCategory>, IPostCateRepository
+    public class PostCategoryRepository : RepositoryBase<PostCategory>, IPostCategoryRepository
 
     {
         public PostCategoryRepository(IDbFactory dbFactory) : base(dbFactory)
