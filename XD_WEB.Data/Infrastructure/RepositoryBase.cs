@@ -26,7 +26,7 @@ namespace XD_WEB.Data.Infrastructure
 
         #endregion Properties
 
-        protected RepositoryBase(IDbFactory dbFactory)
+        protected  RepositoryBase(IDbFactory dbFactory)
         {
             DbFactory = dbFactory;
             dbSet = DbContext.Set<T>();

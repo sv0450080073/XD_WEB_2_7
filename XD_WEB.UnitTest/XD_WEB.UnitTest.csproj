@@ -92,10 +92,6 @@
       <Project>{440c5a4d-c864-4127-9212-4c2dc31ae70b}</Project>
       <Name>XD_WEB.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\XD_WEB.Web\XD_WEB.Web.csproj">
-      <Project>{1c750e84-c3ed-43a3-b5e4-9de061f7a890}</Project>
-      <Name>XD_WEB.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ServiceTest\" />

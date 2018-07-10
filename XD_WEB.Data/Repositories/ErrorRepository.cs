@@ -10,7 +10,7 @@ namespace XD_WEB.Data.Repositories
     public class ErrorRepository : RepositoryBase<Error>, IErrorRepository
 
     {
-        public ErrorRepository(DbFactory dbFactory) : base(dbFactory)
+        public ErrorRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
     }
