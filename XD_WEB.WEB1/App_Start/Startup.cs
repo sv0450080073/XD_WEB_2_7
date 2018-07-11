@@ -14,10 +14,12 @@ using XD_WEB.Data.Infrastructure;
 using XD_WEB.Data.Repositories;
 using XD_WEB.Model.Models;
 using XD_WEB.Service;
+using XD_WEB.WEB1.App_Start;
 
-[assembly: OwinStartup(typeof(TeduShop.Web.App_Start.Startup))]
 
-namespace TeduShop.Web.App_Start
+[assembly: OwinStartup(typeof(XD_WEB.WEB1.App_Start.Startup))]
+
+namespace XD_WEB.WEB1.App_Start
 {
     public partial   class Startup
     {

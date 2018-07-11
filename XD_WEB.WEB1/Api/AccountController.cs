@@ -4,9 +4,10 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using TeduShop.Web.App_Start;
 
-namespace TeduShop.Web.Api
+using XD_WEB.WEB1.App_Start;
+
+namespace XD_WEB.WEB1.Api
 {
     [RoutePrefix("api/account")]
     public class AccountController : ApiController

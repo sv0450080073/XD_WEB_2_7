@@ -98,6 +98,9 @@
     <Compile Include="XD_WEB_DBContext.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".bin\bower.cmd" />
+    <None Include=".bin\git.cmd" />
+    <None Include=".bin\node.cmd" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

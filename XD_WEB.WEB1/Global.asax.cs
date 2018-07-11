@@ -4,7 +4,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 
 using XD_WEB.WEB1.Mappings;
-using XD_WEB.WEB1.Models;
+
 
 namespace XD_WEB.WEB1
 {
@@ -12,7 +12,9 @@ namespace XD_WEB.WEB1
     {
         protected void Application_Start()
         {
+            //autmapper 
             AutoMapper.Mapper.Initialize(m => m.AddProfile<MappingProfile>());
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             //AutomapperConfiguration.Configure();

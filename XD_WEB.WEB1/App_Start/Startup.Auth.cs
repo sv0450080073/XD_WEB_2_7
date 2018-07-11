@@ -9,9 +9,9 @@ using XD_WEB.Model.Models;
 
 
 
-[assembly: OwinStartup(typeof(TeduShop.Web.App_Start.Startup))]
+[assembly: OwinStartup(typeof(XD_WEB.WEB1.App_Start.Startup))]
 
-namespace TeduShop.Web.App_Start
+namespace XD_WEB.WEB1.App_Start
 {
     public partial class Startup
     {

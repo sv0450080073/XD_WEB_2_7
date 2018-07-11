@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using XD_WEB.Data;
 using XD_WEB.Model.Models;
 
-namespace TeduShop.Web.App_Start
+namespace XD_WEB.WEB1.App_Start
 {
     public class ApplicationUserStore : UserStore<ApplicationUser>
     {

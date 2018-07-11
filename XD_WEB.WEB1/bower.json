@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "angular": "*"
+  },
+  "directory": "Scripts/plugins",
+  "name": "angular",
+  "private": true
+  
+}
