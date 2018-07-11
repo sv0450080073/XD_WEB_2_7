@@ -2,7 +2,9 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using XD_WEB.Web.Mappings;
+
+using XD_WEB.WEB1.Mappings;
+using XD_WEB.WEB1.Models;
 
 namespace XD_WEB.WEB1
 {
@@ -10,12 +12,32 @@ namespace XD_WEB.WEB1
     {
         protected void Application_Start()
         {
+            AutoMapper.Mapper.Initialize(m => m.AddProfile<MappingProfile>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            AutomapperConfiguration.Configure();
+            //AutomapperConfiguration.Configure();
+            
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //mapping 
+            //MappingConfig.RegisterMapping();
         }
     }
+    // thử rồi ko thành 
+   /* public class MappingConfig
+    {
+        public static AutoMapper.IMapper Mapping;
+        public static void RegisterMapping()
+        {
+            var mapperconfig = new AutoMapper.MapperConfiguration(config =>
+             {
+                 config.CreateMap<Post, PostViewModel>();
+                 config.CreateMap<PostCategory, PostCategoryViewModel>();
+                 config.CreateMap<Tag, TagViewModel>();
+             });
+            Mapping = mapperconfig.CreateMapper();
+        }
+
+    }*/
 }

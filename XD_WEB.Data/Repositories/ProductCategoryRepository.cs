@@ -5,7 +5,7 @@ using XD_WEB.Model.Models;
 
 namespace XD_WEB.Data.Repositories
 {
-    public interface IProductCategoryRepository:IRepository<ProductCategory>
+    public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }

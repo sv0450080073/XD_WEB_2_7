@@ -18,6 +18,7 @@ namespace XD_WEB.Service
         IEnumerable<PostCategory> GetAllByParentId(int parentId);
 
         PostCategory GetById(int id);
+
         void Save();
     }
 
@@ -35,12 +36,12 @@ namespace XD_WEB.Service
 
         public PostCategory Add(PostCategory postCategory)
         {
-          return   _postCategoryRepository.Add(postCategory);
+            return _postCategoryRepository.Add(postCategory);
         }
 
         public PostCategory Delete(int id)
         {
-           return  _postCategoryRepository.Delete(id);
+            return _postCategoryRepository.Delete(id);
         }
 
         public IEnumerable<PostCategory> GetAll()

@@ -9,9 +9,11 @@ namespace XD_WEB.Model.Models
     {
         [Key]
         public Guid ID { set; get; }
+
         [Required]
         public DateTime VisitedDate { set; get; }
-        [MaxLength(256)] 
+
+        [MaxLength(256)]
         public string IPAddress { set; get; }
     }
 }

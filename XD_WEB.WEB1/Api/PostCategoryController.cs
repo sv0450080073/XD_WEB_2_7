@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -7,20 +6,22 @@ using System.Web.Http;
 using XD_WEB.Model.Models;
 using XD_WEB.Service;
 using XD_WEB.Web.Infrastructure.Core;
-using XD_WEB.WEB1.Models;
 using XD_WEB.Web.Infrastructure.Extensions;
+using XD_WEB.WEB1.Models;
 
 namespace XD_WEB.Web.Api
 {
     [RoutePrefix("api/postcategory")]
     public class PostCategoryController : ApiControllerBase
     {
-        IPostCategoryService _postCategoryService;
+        private IPostCategoryService _postCategoryService;
+
         //viết các Api
         public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService) : base(errorService)
         {
             this._postCategoryService = postCategoryService;
         }
+
         //Get
         [Route("getall")]
         public HttpResponseMessage Get(HttpRequestMessage request)
@@ -30,12 +31,12 @@ namespace XD_WEB.Web.Api
                 var listCategory = _postCategoryService.GetAll();
 
                 var listCategoryVm = Mapper.Map<List<PostCategoryViewModel>>(listCategory);
-            
 
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategoryVm);
                 return response;
             });
         }
+
         //Post
         [Route("add")]
         public HttpResponseMessage Post(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
@@ -49,7 +50,6 @@ namespace XD_WEB.Web.Api
                 }
                 else
                 {
-
                     PostCategory newPostCategory = new PostCategory();
 
                     newPostCategory.UpdatePostCategory(postCategoryVm);
@@ -59,13 +59,11 @@ namespace XD_WEB.Web.Api
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.Created, category);
-
                 }
                 return response;
             });
-     
-
         }
+
         //Put
         [Route("update")]
         public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
@@ -85,12 +83,11 @@ namespace XD_WEB.Web.Api
                     _postCategoryService.Update(postCategoryDb);
                     _postCategoryService.Save();
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });
-
         }
+
         //Delete
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
@@ -110,6 +107,5 @@ namespace XD_WEB.Web.Api
                 return response;
             });
         }
-      
     }
 }

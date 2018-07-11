@@ -13,12 +13,16 @@ namespace XD_WEB.Model.Models
         [Required]
         [MaxLength(256)]
         public string Name { set; get; }
-        [MaxLength (256)]
+
+        [MaxLength(256)]
         public string Content { set; get; }
+
         [MaxLength(256)]
         public string MetaKeyWord { set; get; }
+
         [MaxLength(256)]
         public string MetaDescription { set; get; }
+
         public bool? Status { set; get; }
     }
 }

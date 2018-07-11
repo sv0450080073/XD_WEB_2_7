@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using XD_WEB.Data.Infrastructure;
 using XD_WEB.Model.Models;
-using System.Linq;
 
 namespace XD_WEB.Data.Repositories
 {
@@ -20,11 +20,11 @@ namespace XD_WEB.Data.Repositories
             var query = from p in DbContext.Posts
                         join pt in DbContext.PostTags
                         on p.ID equals pt.PostID
-                        where pt.TagID == tag   && p.Status
+                        where pt.TagID == tag && p.Status
                         orderby p.CreatedDate descending
                         select p;
             totalRow = query.Count();
-            query = query.Skip((pageIndex - 1)*pageSize).Take(pageSize);
+            query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
             return query;
         }
     }

@@ -1,10 +1,8 @@
-﻿
-
-using System;
+﻿using System;
 
 namespace XD_WEB.Model.Abstract
 {
-    public  interface IAuditable 
+    public interface IAuditable
     {
         DateTime? CreatedDate { set; get; }
         string CreatedBy { set; get; }

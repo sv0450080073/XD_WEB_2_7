@@ -9,10 +9,13 @@ namespace XD_WEB.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
+
         [MaxLength(256)]
         public string Code { set; get; }
+
         [MaxLength(256)]
         public string ValueString { set; get; }
+
         public int? ValueInt { set; get; }
     }
 }

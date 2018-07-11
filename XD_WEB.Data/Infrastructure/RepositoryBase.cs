@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace XD_WEB.Data.Infrastructure
 
         #endregion Properties
 
-        protected  RepositoryBase(IDbFactory dbFactory)
+        protected RepositoryBase(IDbFactory dbFactory)
         {
             DbFactory = dbFactory;
             dbSet = DbContext.Set<T>();
@@ -54,7 +54,7 @@ namespace XD_WEB.Data.Infrastructure
         public virtual T Delete(int id)
         {
             var entity = dbSet.Find(id);
-           return  dbSet.Remove(entity);
+            return dbSet.Remove(entity);
         }
 
         public virtual void DeleteMulti(Expression<Func<T, bool>> where)
@@ -150,8 +150,6 @@ namespace XD_WEB.Data.Infrastructure
         {
             return dbSet.Find(id);
         }
-
-
 
         #endregion Implementation
     }

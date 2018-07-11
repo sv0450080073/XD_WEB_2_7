@@ -18,14 +18,18 @@ namespace XD_WEB.Model.Models
 
         [Required]
         [MaxLength(256)]
-        [Column(TypeName="varchar")]
+        [Column(TypeName = "varchar")]
         public string Alias { set; get; }
+
         [MaxLength(500)]
         public string Description { set; get; }
+
         public int? ParentID { set; get; }
         public int? DisplayOrder { set; get; }
+
         [MaxLength(256)]
         public string Image { set; get; }
+
         public bool? HomeFlag { set; get; }
 
         //KHÓA CHÍNH

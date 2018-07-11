@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Linq;
 using XD_WEB.Model.Abstract;
 
 namespace XD_WEB.Model.Models
@@ -19,18 +17,22 @@ namespace XD_WEB.Model.Models
 
         [Required]
         [MaxLength(256)]
-        [Column(TypeName ="varchar")]
+        [Column(TypeName = "varchar")]
         public string Alias { set; get; }
+
         [Required]
         public long CategoryID { set; get; }
+
         [MaxLength(256)]
         public string Image { set; get; }
 
-        [Column(TypeName ="xml")]
+        [Column(TypeName = "xml")]
         public string MoreImages { set; get; } // kiểu xml -->XElement
+
         public decimal Price { set; get; }
         public decimal? PromotionPrice { set; get; }  //?có thể null
         public int? Warranty { set; get; }
+
         [MaxLength(500)]
         public string Description { set; get; }
 

@@ -1,11 +1,4 @@
-﻿
-
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using XD_WEB.Model.Models;
+﻿using XD_WEB.Model.Models;
 using XD_WEB.WEB1.Models;
 
 namespace XD_WEB.Web.Infrastructure.Extensions
@@ -47,15 +40,15 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             postCategory.MetaKeyword = postCategoryVm.MetaKeyword;
             postCategory.MetaDescription = postCategoryVm.MetaDescription;
             postCategory.Status = postCategoryVm.Status;
-
         }
+
         public static void UpdatePost(this Post post, PostViewModel postVm)
         {
             /* public int ID { set; get; }
             public string Name { set; get; }
             public string Alias { set; get; }
             public int CategoryID { set; ge
-     
+
             public string Image { set; get; }
             public string Description { set; get; }
             public string Content { set; get; }
@@ -73,7 +66,6 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             post.HomeFlag = postVm.HomeFlag;
             post.ViewCount = postVm.ViewCount;
 
-
             post.CreatedDate = postVm.CreatedDate;
             post.CreatedBy = postVm.CreatedBy;
             post.UpdatedDate = postVm.UpdatedDate;
@@ -81,7 +73,6 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             post.MetaKeyword = postVm.MetaKeyword;
             post.MetaDescription = postVm.MetaDescription;
             post.Status = postVm.Status;
-
         }
     }
 }

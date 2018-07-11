@@ -20,8 +20,10 @@ namespace XD_WEB.Model.Models
         [Required]
         [MaxLength(50)]
         public string ShipName { set; get; }
+
         [MaxLength(256)]
         public string ShipMobile { set; get; }
+
         [MaxLength(256)]
         public string ShipAddress { set; get; }
 
