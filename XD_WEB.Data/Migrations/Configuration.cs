@@ -1,9 +1,10 @@
-namespace XD_WEB.Data.Migrations
+﻿namespace XD_WEB.Data.Migrations
 {
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
    
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -19,9 +20,10 @@ namespace XD_WEB.Data.Migrations
 
         protected override void Seed(XD_WEB.Data.XD_WEB_DBContext context)
         {
+            CreateProductCategoySample(context);
             //  This method will be called after migrating to the latest version.
 
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new XD_WEB_DBContext()));
+            /*var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new XD_WEB_DBContext()));
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new XD_WEB_DBContext()));
 
@@ -45,7 +47,26 @@ namespace XD_WEB.Data.Migrations
 
             var adminUser = manager.FindByEmail("tedu.international@gmail.com");
 
-            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });*/
+           
+
+            }
+        //hàm thêm phoductcategory vào database
+        private void CreateProductCategoySample(XD_WEB.Data.XD_WEB_DBContext context)
+        {
+            if (context.ProductCategories.Count() == 0)
+            {
+                List<ProductCategory> listProductCategory = new List<ProductCategory>()
+                {
+                   new ProductCategory(){Name="Điện lạnh",Alias="dien-lanh",Status=true},
+                   new ProductCategory(){Name="Viễn thông",Alias="vien-thong",Status=true},
+                   new ProductCategory(){Name="Đồ gia dụng",Alias="do-gia-dung",Status=true},
+                   new ProductCategory(){Name="Mỹ phẩm",Alias="my-pham",Status=true}
+                };
+                context.ProductCategories.AddRange(listProductCategory);
+                context.SaveChanges();
+
+            }
 
         }
     }
