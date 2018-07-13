@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module('xd_web.common', ['ui.router'])
+    angular.module('xd_web.common', ['ui.router']);
 
 
 

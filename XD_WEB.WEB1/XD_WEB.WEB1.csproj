@@ -246,6 +246,7 @@
     <Content Include="app\component\product_categories\productCategories.mudule.js" />
     <Content Include="app\component\product_categories\productCategoryListController.js" />
     <Content Include="app\component\product_categories\productCategoryListView.html" />
+    <Content Include="app\share\filters\statusFilter.js" />
     <Content Include="app\share\modules\xd_web.common.js" />
     <Content Include="app\share\services\apiService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
