@@ -1,6 +1,10 @@
 ﻿/// <reference path="../assets/admin/libss/bower_components/angular/angular.js" />
 (function () {
-    angular.module('xd_web', ['xd_web.products','xd_web.common']).config(config);
+    angular.module('xd_web',
+        ['xd_web.products',
+         'xd_web.product_categories',
+         'xd_web.common'])
+        .config(config);
 
     //tiêm
     config.$inject = ['$stateProvider', '$urlRouterProvider'];

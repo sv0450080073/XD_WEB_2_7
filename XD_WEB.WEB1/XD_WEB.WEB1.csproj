@@ -243,7 +243,11 @@
     <Content Include="app\component\products\productEditView.html" />
     <Content Include="app\component\products\productListController.js" />
     <Content Include="app\component\products\productListView.html" />
+    <Content Include="app\component\product_categories\productCategories.mudule.js" />
+    <Content Include="app\component\product_categories\productCategoryListController.js" />
+    <Content Include="app\component\product_categories\productCategoryListView.html" />
     <Content Include="app\share\modules\xd_web.common.js" />
+    <Content Include="app\share\services\apiService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\skins\skin-black-light.css" />
@@ -634,7 +638,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\component\orders\" />
-    <Folder Include="app\component\product_categories\" />
     <Folder Include="app\component\roles\" />
     <Folder Include="app\component\users\" />
     <Folder Include="app\share\directive\" />

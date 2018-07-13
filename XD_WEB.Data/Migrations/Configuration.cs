@@ -52,6 +52,7 @@
 
             }
         //hàm thêm phoductcategory vào database
+
         private void CreateProductCategoySample(XD_WEB.Data.XD_WEB_DBContext context)
         {
             if (context.ProductCategories.Count() == 0)
@@ -63,7 +64,9 @@
                    new ProductCategory(){Name="Đồ gia dụng",Alias="do-gia-dung",Status=true},
                    new ProductCategory(){Name="Mỹ phẩm",Alias="my-pham",Status=true}
                 };
+
                 context.ProductCategories.AddRange(listProductCategory);
+
                 context.SaveChanges();
 
             }
