@@ -207,7 +207,6 @@
                         <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                    
                     </li>
                     <li class="treeview">
                         <a href="#">
@@ -218,9 +217,6 @@
                         <ul class="treeview-menu">
                             <li><a ui-sref="product_categories"><i class="fa fa-circle-o"></i> Danh mục sản phẩm</a></li>
                             <li><a ui-sref="products"><i class="fa fa-circle-o"></i> Sản phẩm</a></li>
-
-
-
                         </ul>
                     </li>
                     <li>
@@ -341,7 +337,6 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <div ui-view></div>
-
         </div><!-- /.content-wrapper -->
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
@@ -525,6 +520,8 @@
     <script src="~/app/share/filters/statusFilter.js"></script>
     <script src="~/app/share/services/apiService.js"></script>
 
+    <script src="~/app/share/directives/pagerDirective.js"></script>
+
     <script src="~/app/component/products/products.module.js"></script>
     <script src="~/app/component/product_categories/productCategories.mudule.js"></script>
 
@@ -535,8 +532,5 @@
     <script src="~/app/component/products/productAddController.js"></script>
     <script src="~/app/component/products/productListController.js"></script>
     <script src="~/app/component/home/homeController.js"></script>
-
-
 </body>
  </html>
-

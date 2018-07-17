@@ -7,6 +7,4 @@
                 return 'Khóa';
         }
     });
-
-
 })(angular.module('xd_web.common'));

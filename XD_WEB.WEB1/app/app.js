@@ -2,8 +2,8 @@
 (function () {
     angular.module('xd_web',
         ['xd_web.products',
-         'xd_web.product_categories',
-         'xd_web.common'])
+            'xd_web.product_categories',
+            'xd_web.common'])
         .config(config);
 
     //tiêm

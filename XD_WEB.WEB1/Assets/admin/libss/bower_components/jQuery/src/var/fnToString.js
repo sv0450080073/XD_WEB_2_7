@@ -1,7 +1,7 @@
-define( [
+define([
 	"./hasOwn"
-], function( hasOwn ) {
+], function (hasOwn) {
 	"use strict";
 
 	return hasOwn.toString;
-} );
+});

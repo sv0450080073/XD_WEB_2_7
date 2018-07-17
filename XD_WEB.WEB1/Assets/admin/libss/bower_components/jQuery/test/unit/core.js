@@ -20,7 +20,6 @@ QUnit.test( "Basic requirements", function( assert ) {
 } );
 
 QUnit.test( "jQuery()", function( assert ) {
-
 	var elem, i,
 		obj = jQuery( "div" ),
 		code = jQuery( "<code/>" ),
@@ -239,7 +238,6 @@ QUnit.test( "trim", function( assert ) {
 } );
 
 QUnit.asyncTest( "isPlainObject", function( assert ) {
-
 	assert.expect( 23 );
 
 	var pass, iframe, doc, parentObj, childObj, deep,
@@ -371,7 +369,6 @@ QUnit.test( "isXMLDoc - HTML", function( assert ) {
 		} catch ( e ) {
 			assert.ok( false, "Iframe body element exception" );
 		}
-
 	} catch ( e ) {
 		assert.ok( true, "Iframe body element - iframe not working correctly" );
 	}
@@ -390,7 +387,6 @@ QUnit.test( "XSS via location.hash", function( assert ) {
 		QUnit.start();
 	};
 	try {
-
 		// This throws an error because it's processed like an id
 		jQuery( "#<img id='check9521' src='no-such-.gif' onerror='jQuery._check9521(false)'>" ).appendTo( "#qunit-fixture" );
 	} catch ( err ) {
@@ -574,7 +570,6 @@ QUnit.test( "inArray()", function( assert ) {
 	jQuery.each( falseTests, function( key, elem ) {
 		assert.equal( !!~jQuery.inArray( elem, selections[ key ] ), false, "elem is NOT in the array of selections" );
 	} );
-
 } );
 
 QUnit.test( "get(Number)", function( assert ) {
@@ -1042,7 +1037,6 @@ QUnit.test( "jQuery.extend(true,{},{a:[], o:{}}); deep copy with array, followed
 	assert.expect( 2 );
 
 	var result, initial = {
-
 		// This will make "copyIsArray" true
 		array: [ 1, 2, 3, 4 ],
 
@@ -1410,7 +1404,6 @@ QUnit.test( "Iterability of jQuery objects (gh-1693)", function( assert ) {
 	var i, elem, result;
 
 	if ( typeof Symbol === "function" ) {
-
 		elem = jQuery( "<div></div><span></span><a></a>" );
 		result = "";
 

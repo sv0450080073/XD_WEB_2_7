@@ -1,14 +1,8 @@
 ﻿namespace XD_WEB.Data.Migrations
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
-   
-    using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using XD_WEB.Data;
     using XD_WEB.Model.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<XD_WEB.Data.XD_WEB_DBContext>
@@ -34,7 +28,6 @@
                 EmailConfirmed = true,
                 BirthDay = DateTime.Now,
                 FullName = "Technology Education"
-
             };
 
             manager.Create(user, "123654$");
@@ -48,9 +41,8 @@
             var adminUser = manager.FindByEmail("tedu.international@gmail.com");
 
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });*/
-           
+        }
 
-            }
         //hàm thêm phoductcategory vào database
 
         private void CreateProductCategoySample(XD_WEB.Data.XD_WEB_DBContext context)
@@ -68,9 +60,7 @@
                 context.ProductCategories.AddRange(listProductCategory);
 
                 context.SaveChanges();
-
             }
-
         }
     }
 }

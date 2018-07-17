@@ -14,14 +14,12 @@ using XD_WEB.Data.Infrastructure;
 using XD_WEB.Data.Repositories;
 using XD_WEB.Model.Models;
 using XD_WEB.Service;
-using XD_WEB.WEB1.App_Start;
-
 
 [assembly: OwinStartup(typeof(XD_WEB.WEB1.App_Start.Startup))]
 
 namespace XD_WEB.WEB1.App_Start
 {
-    public partial   class Startup
+    public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
@@ -42,7 +40,7 @@ namespace XD_WEB.WEB1.App_Start
 
             builder.RegisterType<XD_WEB_DBContext>().AsSelf().InstancePerRequest();
 
-            //ASP.Identity 
+            //ASP.Identity
             builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
             builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
             builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();

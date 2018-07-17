@@ -13,11 +13,12 @@ namespace XD_WEB.WEB1.App_Start
 {
     public class ApplicationUserStore : UserStore<ApplicationUser>
     {
-        public ApplicationUserStore( XD_WEB_DBContext context)
+        public ApplicationUserStore(XD_WEB_DBContext context)
             : base(context)
         {
         }
     }
+
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {

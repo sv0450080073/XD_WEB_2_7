@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace XD_WEB.Model.Models
 {
-    public  class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser
     {
         [MaxLength(256)]
         public string FullName { set; get; }

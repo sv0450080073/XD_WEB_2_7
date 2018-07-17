@@ -7,8 +7,6 @@ using System;
 using XD_WEB.Data;
 using XD_WEB.Model.Models;
 
-
-
 [assembly: OwinStartup(typeof(XD_WEB.WEB1.App_Start.Startup))]
 
 namespace XD_WEB.WEB1.App_Start

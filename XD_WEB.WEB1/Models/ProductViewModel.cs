@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace XD_WEB.WEB1.Models
 {
@@ -9,26 +6,20 @@ namespace XD_WEB.WEB1.Models
     {
         public long ID { set; get; }
 
-      
         public string Name { set; get; }
 
-       
         public string Alias { set; get; }
 
-       
         public long CategoryID { set; get; }
 
-        
         public string Image { set; get; }
 
-        
         public string MoreImages { set; get; } // kiểu xml -->XElement
 
         public decimal Price { set; get; }
         public decimal? PromotionPrice { set; get; }  //?có thể null
         public int? Warranty { set; get; }
 
-       
         public string Description { set; get; }
 
         public string Content { set; get; }

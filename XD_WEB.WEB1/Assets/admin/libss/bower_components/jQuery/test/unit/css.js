@@ -1,5 +1,4 @@
 if ( jQuery.css ) {
-
 QUnit.module( "css", { teardown: moduleTeardown } );
 
 QUnit.test( "css(String|Hash)", function( assert ) {
@@ -489,9 +488,7 @@ QUnit.test( "css(Object) where values are Functions with incoming values", funct
 
 // .show(), .hide(), can be excluded from the build
 if ( jQuery.fn.show && jQuery.fn.hide ) {
-
 QUnit.test( "show()", function( assert ) {
-
 	assert.expect( 18 );
 
 	var hiddendiv, div, pass, test;
@@ -667,7 +664,6 @@ QUnit.test( "show() after hide() should always set display to initial value (#14
 } );
 
 QUnit.test( "show/hide 3.0, default display", function( assert ) {
-
 	assert.expect( 36 );
 
 	var i,
@@ -709,7 +705,6 @@ QUnit.test( "show/hide 3.0, default display", function( assert ) {
 } );
 
 QUnit.test( "show/hide 3.0, default body display", function( assert ) {
-
 	assert.expect( 2 );
 
 	var hideBody = supportjQuery( "<style>body{display:none}</style>" ).appendTo( document.head ),
@@ -725,7 +720,6 @@ QUnit.test( "show/hide 3.0, default body display", function( assert ) {
 } );
 
 QUnit.test( "show/hide 3.0, cascade display", function( assert ) {
-
 	assert.expect( 36 );
 
 	var i,
@@ -764,7 +758,6 @@ QUnit.test( "show/hide 3.0, cascade display", function( assert ) {
 } );
 
 QUnit.test( "show/hide 3.0, inline display", function( assert ) {
-
 	assert.expect( 96 );
 
 	var i,
@@ -813,7 +806,6 @@ QUnit.test( "show/hide 3.0, inline display", function( assert ) {
 } );
 
 QUnit.test( "show/hide 3.0, cascade hidden", function( assert ) {
-
 	assert.expect( 72 );
 
 	var i,
@@ -860,7 +852,6 @@ QUnit.test( "show/hide 3.0, cascade hidden", function( assert ) {
 } );
 
 QUnit.test( "show/hide 3.0, inline hidden", function( assert ) {
-
 	assert.expect( 84 );
 
 	var i,
@@ -906,7 +897,6 @@ QUnit.test( "show/hide 3.0, inline hidden", function( assert ) {
 		}
 	} );
 } );
-
 }
 
 QUnit[ jQuery.find.compile && jQuery.fn.toggle ? "test" : "skip" ]( "toggle()", function( assert ) {
@@ -1046,7 +1036,6 @@ QUnit.test( "jQuery.cssProps behavior, (bug #8402)", function( assert ) {
 } );
 
 QUnit.test( "widows & orphans #8936", function( assert ) {
-
 	var $p = jQuery( "<p>" ).appendTo( "#qunit-fixture" );
 
 	assert.expect( 2 );
@@ -1273,9 +1262,7 @@ QUnit.test( "cssHooks - expand", function( assert ) {
 		expected[ keys[ 3 ] ] = "40px";
 		result = hook.expand( "10px 20px 30px 40px" );
 		assert.deepEqual( result, expected, property + " expands properly with '10px 20px 30px 40px'" );
-
 	} );
-
 } );
 
 QUnit.test( "css opacity consistency across browsers (#12685)", function( assert ) {
@@ -1384,7 +1371,6 @@ QUnit.test(
 				value: [ "rgb(255, 0, 0)", "rgb(255,0,0)", "#ff0000" ],
 				expected: [ "transparent" ]
 			}, {
-
 				// Firefox returns auto's value
 				name: "backgroundImage",
 				value: [ "url('test.png')", "url(" + baseURL + "test.png)", "url(\"" + baseURL + "test.png\")" ],
@@ -1394,7 +1380,6 @@ QUnit.test(
 				value: [ "5% 5%" ],
 				expected: [ "0% 0%", "-1000px 0px", "-1000px 0%" ]
 			}, {
-
 				// Firefox returns no-repeat
 				name: "backgroundRepeat",
 				value: [ "repeat-y" ],
@@ -1512,7 +1497,6 @@ QUnit.test( "Do not throw on frame elements from css method (#15098)", function(
 	}
 
 	QUnit.test( "Don't default to a cached previously used wrong prefixed name (gh-2015)", function( assert ) {
-
 		// Note: this test needs a property we know is only supported in a prefixed version
 		// by at least one of our main supported browsers. This may get out of date so let's
 		// use -(webkit|moz)-appearance as well as those two are not on a standards track.
@@ -1578,7 +1562,6 @@ QUnit.test( "Do not throw on frame elements from css method (#15098)", function(
 
 		assert.equal( style.MozFakeProperty, "old value", "Fake prefixed property is not cached" );
 	} );
-
 } )();
 
 ( function() {
@@ -1657,5 +1640,4 @@ QUnit.test( "Do not throw on frame elements from css method (#15098)", function(
 		}
 	} );
 } )();
-
 }

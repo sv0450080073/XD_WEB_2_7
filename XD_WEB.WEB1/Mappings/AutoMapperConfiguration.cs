@@ -9,18 +9,14 @@ namespace XD_WEB.Web.Mappings
     public class AutomapperConfiguration
 
     {
-
         public static void Configure()
         {
             var config = new MapperConfiguration(cfg =>
             {
-                    cfg.CreateMap<Post, PostViewModel>();
-                    cfg.CreateMap<PostCategory, PostCategoryViewModel>();
-                    cfg.CreateMap<Tag, TagViewModel>();
+                cfg.CreateMap<Post, PostViewModel>();
+                cfg.CreateMap<PostCategory, PostCategoryViewModel>();
+                cfg.CreateMap<Tag, TagViewModel>();
             });
-           
-
-           
         }
     }
 }
