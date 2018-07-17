@@ -1,7 +1,9 @@
-define([
+define( [
 	"../var/pnum"
-], function (pnum) {
-	"use strict";
+], function( pnum ) {
 
-	return new RegExp("^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i");
-});
+"use strict";
+
+return new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
+
+} );

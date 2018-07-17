@@ -1,61 +1,63 @@
-module.exports = function (grunt) {
+module.exports = function( grunt ) {
+
 	"use strict";
 
-	grunt.registerTask("testswarm", function (commit, configFile, projectName, browserSets,
-		timeout, testMode) {
+	grunt.registerTask( "testswarm", function( commit, configFile, projectName, browserSets,
+			timeout, testMode ) {
 		var jobName, config, tests,
-			testswarm = require("testswarm"),
+			testswarm = require( "testswarm" ),
 			runs = {},
 			done = this.async(),
-			pull = /PR-(\d+)/.exec(commit);
+			pull = /PR-(\d+)/.exec( commit );
 
 		projectName = projectName || "jquery";
-		config = grunt.file.readJSON(configFile)[projectName];
+		config = grunt.file.readJSON( configFile )[ projectName ];
 		browserSets = browserSets || config.browserSets;
-		if (browserSets[0] === "[") {
+		if ( browserSets[ 0 ] === "[" ) {
+
 			// We got an array, parse it
-			browserSets = JSON.parse(browserSets);
+			browserSets = JSON.parse( browserSets );
 		}
 		timeout = timeout || 1000 * 60 * 15;
-		tests = grunt.config([this.name, "tests"]);
+		tests = grunt.config( [ this.name, "tests" ] );
 
-		if (pull) {
+		if ( pull ) {
 			jobName = "Pull <a href='https://github.com/jquery/jquery/pull/" +
-				pull[1] + "'>#" + pull[1] + "</a>";
+				pull[ 1 ] + "'>#" + pull[ 1 ] + "</a>";
 		} else {
 			jobName = "Commit <a href='https://github.com/jquery/jquery/commit/" +
-				commit + "'>" + commit.substr(0, 10) + "</a>";
+				commit + "'>" + commit.substr( 0, 10 ) + "</a>";
 		}
 
-		if (testMode === "basic") {
+		if ( testMode === "basic" ) {
 			runs.basic = config.testUrl + commit + "/test/index.html?module=basic";
 		} else {
-			tests.forEach(function (test) {
-				runs[test] = config.testUrl + commit + "/test/index.html?module=" + test;
-			});
+			tests.forEach( function( test ) {
+				runs[ test ] = config.testUrl + commit + "/test/index.html?module=" + test;
+			} );
 		}
 
-		testswarm.createClient({
+		testswarm.createClient( {
 			url: config.swarmUrl
-		})
-			.addReporter(testswarm.reporters.cli)
-			.auth({
-				id: config.authUsername,
-				token: config.authToken
-			})
-			.addjob(
-				{
-					name: jobName,
-					runs: runs,
-					runMax: config.runMax,
-					browserSets: browserSets,
-					timeout: timeout
-				}, function (err, passed) {
-					if (err) {
-						grunt.log.error(err);
-					}
-					done(passed);
+		} )
+		.addReporter( testswarm.reporters.cli )
+		.auth( {
+			id: config.authUsername,
+			token: config.authToken
+		} )
+		.addjob(
+			{
+				name: jobName,
+				runs: runs,
+				runMax: config.runMax,
+				browserSets: browserSets,
+				timeout: timeout
+			}, function( err, passed ) {
+				if ( err ) {
+					grunt.log.error( err );
 				}
-			);
-	});
+				done( passed );
+			}
+		);
+	} );
 };

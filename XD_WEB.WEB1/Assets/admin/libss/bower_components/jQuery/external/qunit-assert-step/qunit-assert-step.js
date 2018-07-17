@@ -1,4 +1,5 @@
-QUnit.extend(QUnit.assert, {
+QUnit.extend( QUnit.assert, {
+
 	/**
 	 * Check the sequence/order
 	 *

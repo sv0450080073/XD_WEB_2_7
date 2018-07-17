@@ -2,6 +2,7 @@
 // Forms
 // --------------------------------------------------
 
+
 // Normalize non-controls
 //
 // Restyle and baseline non-control form elements.
@@ -34,6 +35,7 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
+
 
 // Normalize form controls
 //
@@ -85,6 +87,7 @@ output {
   line-height: @line-height-base;
   color: @input-color;
 }
+
 
 // Common form controls
 //
@@ -158,6 +161,7 @@ output {
   }
 }
 
+
 // Search inputs in iOS
 //
 // This overrides the extra rounded corners on search inputs in iOS so that our
@@ -168,6 +172,7 @@ output {
 input[type="search"] {
   -webkit-appearance: none;
 }
+
 
 // Special styles for iOS temporal inputs
 //
@@ -199,6 +204,7 @@ input[type="search"] {
   }
 }
 
+
 // Form groups
 //
 // Designed to help with the organization and spacing of vertical forms. For
@@ -207,6 +213,7 @@ input[type="search"] {
 .form-group {
   margin-bottom: @form-group-margin-bottom;
 }
+
 
 // Checkboxes and radios
 //
@@ -289,6 +296,7 @@ input[type="checkbox"] {
   }
 }
 
+
 // Static form control text
 //
 // Apply class to a `p` element to make any string of text align with labels in
@@ -308,6 +316,7 @@ input[type="checkbox"] {
     padding-right: 0;
   }
 }
+
 
 // Form control sizing
 //
@@ -373,6 +382,7 @@ input[type="checkbox"] {
   }
 }
 
+
 // Form control feedback states
 //
 // Apply contextual and semantic states to individual form controls.
@@ -427,6 +437,7 @@ input[type="checkbox"] {
 
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
+
   & ~ .form-control-feedback {
     top: (@line-height-computed + 5); // Height of the `label` and its margin
   }
@@ -434,6 +445,7 @@ input[type="checkbox"] {
     top: 0;
   }
 }
+
 
 // Help text
 //
@@ -447,6 +459,7 @@ input[type="checkbox"] {
   color: lighten(@text-color, 25%); // lighten the text some for contrast
 }
 
+
 // Inline forms
 //
 // Make forms appear inline(-block) by adding the `.form-inline` class. Inline
@@ -459,6 +472,7 @@ input[type="checkbox"] {
 // Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
 
 .form-inline {
+
   // Kick in the inline
   @media (min-width: @screen-sm-min) {
     // Inline-block all the things for "inline"
@@ -527,12 +541,14 @@ input[type="checkbox"] {
   }
 }
 
+
 // Horizontal forms
 //
 // Horizontal forms are built on grid classes and allow you to create forms with
 // labels on the left and inputs on the right.
 
 .form-horizontal {
+
   // Consistent vertical alignment of radios and checkboxes
   //
   // Labels also get some reset styles, but that is scoped to a media query below.

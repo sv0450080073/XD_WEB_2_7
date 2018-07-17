@@ -1,21 +1,23 @@
-define([
+define( [
 	"../ajax"
-], function (jQuery) {
-	"use strict";
+], function( jQuery ) {
 
-	jQuery._evalUrl = function (url) {
-		return jQuery.ajax({
-			url: url,
+"use strict";
 
-			// Make this explicit, since user can override this through ajaxSetup (#11264)
-			type: "GET",
-			dataType: "script",
-			cache: true,
-			async: false,
-			global: false,
-			"throws": true
-		});
-	};
+jQuery._evalUrl = function( url ) {
+	return jQuery.ajax( {
+		url: url,
 
-	return jQuery._evalUrl;
-});
+		// Make this explicit, since user can override this through ajaxSetup (#11264)
+		type: "GET",
+		dataType: "script",
+		cache: true,
+		async: false,
+		global: false,
+		"throws": true
+	} );
+};
+
+return jQuery._evalUrl;
+
+} );

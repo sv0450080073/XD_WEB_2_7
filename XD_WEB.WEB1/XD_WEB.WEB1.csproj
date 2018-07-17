@@ -252,6 +252,7 @@
     <Content Include="app\share\filters\statusFilter.js" />
     <Content Include="app\share\modules\xd_web.common.js" />
     <Content Include="app\share\services\apiService.js" />
+    <Content Include="app\share\services\notificationService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\skins\skin-black-light.css" />
@@ -371,7 +372,6 @@
     <Content Include="Assets\admin\libss\bower_components\jQuery\build\tasks\qunit_fixture.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\build\tasks\sourcemap.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\build\tasks\testswarm.js" />
-    <Content Include="Assets\admin\libss\bower_components\jQuery\dist\core.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\dist\jquery.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\dist\jquery.min.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\dist\jquery.slim.js" />
@@ -394,6 +394,7 @@
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\ajax.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\ajax\jsonp.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\ajax\load.js" />
+    <Content Include="Assets\admin\libss\bower_components\jQuery\src\ajax\parseJSON.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\ajax\parseXML.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\ajax\script.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\ajax\var\location.js" />
@@ -425,13 +426,16 @@
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\addGetHookIf.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\adjustCSS.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\curCSS.js" />
+    <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\defaultDisplay.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\hiddenVisibleSelectors.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\showHide.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\support.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\var\cssExpand.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\var\getStyles.js" />
+    <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\var\isHidden.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\var\isHiddenWithinTree.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\var\rboxStyle.js" />
+    <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\var\rmargin.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\var\rnumnonpx.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\css\var\swap.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\data.js" />
@@ -454,6 +458,7 @@
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\event\trigger.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\exports\amd.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\exports\global.js" />
+    <Content Include="Assets\admin\libss\bower_components\jQuery\src\intro.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\jquery.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\manipulation.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\manipulation\buildFragment.js" />
@@ -466,6 +471,7 @@
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\manipulation\wrapMap.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\manipulation\_evalUrl.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\offset.js" />
+    <Content Include="Assets\admin\libss\bower_components\jQuery\src\outro.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\queue.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\queue\delay.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\selector-native.js" />
@@ -493,6 +499,7 @@
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\var\push.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\var\rcssNum.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\var\rnothtmlwhite.js" />
+    <Content Include="Assets\admin\libss\bower_components\jQuery\src\var\rnotwhite.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\var\slice.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\var\support.js" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\var\toString.js" />
@@ -624,6 +631,10 @@
     <Content Include="Assets\admin\libss\bower_components\slimScroll\examples\style.css" />
     <Content Include="Assets\admin\libss\bower_components\slimScroll\jquery.slimscroll.js" />
     <Content Include="Assets\admin\libss\bower_components\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\toastr.css" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\toastr.js" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\toastr.min.css" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\toastr.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -817,6 +828,7 @@
     <Content Include="Assets\admin\libss\bower_components\jQuery\package.json" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\README.md" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\src\.eslintrc.json" />
+    <Content Include="Assets\admin\libss\bower_components\jQuery\src\.jshintrc" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\test\.eslintrc.json" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\test\data\support\csp.log" />
     <Content Include="Assets\admin\libss\bower_components\jQuery\test\node_smoke_tests\.eslintrc.json" />
@@ -825,6 +837,13 @@
     <Content Include="Assets\admin\libss\bower_components\slimScroll\bower.json" />
     <Content Include="Assets\admin\libss\bower_components\slimScroll\package.json" />
     <Content Include="Assets\admin\libss\bower_components\slimScroll\README.md" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\.bower.json" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\bower.json" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\LICENSE" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\README.md" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\toastr.js.map" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\toastr.less" />
+    <Content Include="Assets\admin\libss\bower_components\toastr\toastr.scss" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-define([
+define( [
 	"./core",
 	"./core/nodeName",
 	"./core/camelCase",
@@ -8,86 +8,91 @@ define([
 	"./var/slice",
 
 	"./event/alias"
-], function (jQuery, nodeName, camelCase, toType, isFunction, isWindow, slice) {
-	"use strict";
+], function( jQuery, nodeName, camelCase, toType, isFunction, isWindow, slice ) {
 
-	jQuery.fn.extend({
-		bind: function (types, data, fn) {
-			return this.on(types, null, data, fn);
-		},
-		unbind: function (types, fn) {
-			return this.off(types, null, fn);
-		},
+"use strict";
 
-		delegate: function (selector, types, data, fn) {
-			return this.on(types, selector, data, fn);
-		},
-		undelegate: function (selector, types, fn) {
-			// ( namespace ) or ( selector, types [, fn] )
-			return arguments.length === 1 ?
-				this.off(selector, "**") :
-				this.off(types, selector || "**", fn);
-		}
-	});
+jQuery.fn.extend( {
 
-	// Bind a function to a context, optionally partially applying any
-	// arguments.
-	// jQuery.proxy is deprecated to promote standards (specifically Function#bind)
-	// However, it is not slated for removal any time soon
-	jQuery.proxy = function (fn, context) {
-		var tmp, args, proxy;
+	bind: function( types, data, fn ) {
+		return this.on( types, null, data, fn );
+	},
+	unbind: function( types, fn ) {
+		return this.off( types, null, fn );
+	},
 
-		if (typeof context === "string") {
-			tmp = fn[context];
-			context = fn;
-			fn = tmp;
-		}
+	delegate: function( selector, types, data, fn ) {
+		return this.on( types, selector, data, fn );
+	},
+	undelegate: function( selector, types, fn ) {
 
-		// Quick check to determine if target is callable, in the spec
-		// this throws a TypeError, but we will just return undefined.
-		if (!isFunction(fn)) {
-			return undefined;
-		}
+		// ( namespace ) or ( selector, types [, fn] )
+		return arguments.length === 1 ?
+			this.off( selector, "**" ) :
+			this.off( types, selector || "**", fn );
+	}
+} );
 
-		// Simulated bind
-		args = slice.call(arguments, 2);
-		proxy = function () {
-			return fn.apply(context || this, args.concat(slice.call(arguments)));
-		};
+// Bind a function to a context, optionally partially applying any
+// arguments.
+// jQuery.proxy is deprecated to promote standards (specifically Function#bind)
+// However, it is not slated for removal any time soon
+jQuery.proxy = function( fn, context ) {
+	var tmp, args, proxy;
 
-		// Set the guid of unique handler to the same of original handler, so it can be removed
-		proxy.guid = fn.guid = fn.guid || jQuery.guid++;
+	if ( typeof context === "string" ) {
+		tmp = fn[ context ];
+		context = fn;
+		fn = tmp;
+	}
 
-		return proxy;
+	// Quick check to determine if target is callable, in the spec
+	// this throws a TypeError, but we will just return undefined.
+	if ( !isFunction( fn ) ) {
+		return undefined;
+	}
+
+	// Simulated bind
+	args = slice.call( arguments, 2 );
+	proxy = function() {
+		return fn.apply( context || this, args.concat( slice.call( arguments ) ) );
 	};
 
-	jQuery.holdReady = function (hold) {
-		if (hold) {
-			jQuery.readyWait++;
-		} else {
-			jQuery.ready(true);
-		}
-	};
-	jQuery.isArray = Array.isArray;
-	jQuery.parseJSON = JSON.parse;
-	jQuery.nodeName = nodeName;
-	jQuery.isFunction = isFunction;
-	jQuery.isWindow = isWindow;
-	jQuery.camelCase = camelCase;
-	jQuery.type = toType;
+	// Set the guid of unique handler to the same of original handler, so it can be removed
+	proxy.guid = fn.guid = fn.guid || jQuery.guid++;
 
-	jQuery.now = Date.now;
+	return proxy;
+};
 
-	jQuery.isNumeric = function (obj) {
-		// As of jQuery 3.0, isNumeric is limited to
-		// strings and numbers (primitives or objects)
-		// that can be coerced to finite numbers (gh-2662)
-		var type = jQuery.type(obj);
-		return (type === "number" || type === "string") &&
+jQuery.holdReady = function( hold ) {
+	if ( hold ) {
+		jQuery.readyWait++;
+	} else {
+		jQuery.ready( true );
+	}
+};
+jQuery.isArray = Array.isArray;
+jQuery.parseJSON = JSON.parse;
+jQuery.nodeName = nodeName;
+jQuery.isFunction = isFunction;
+jQuery.isWindow = isWindow;
+jQuery.camelCase = camelCase;
+jQuery.type = toType;
 
-			// parseFloat NaNs numeric-cast false positives ("")
-			// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
-			// subtraction forces infinities to NaN
-			!isNaN(obj - parseFloat(obj));
-	};
-});
+jQuery.now = Date.now;
+
+jQuery.isNumeric = function( obj ) {
+
+	// As of jQuery 3.0, isNumeric is limited to
+	// strings and numbers (primitives or objects)
+	// that can be coerced to finite numbers (gh-2662)
+	var type = jQuery.type( obj );
+	return ( type === "number" || type === "string" ) &&
+
+		// parseFloat NaNs numeric-cast false positives ("")
+		// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
+		// subtraction forces infinities to NaN
+		!isNaN( obj - parseFloat( obj ) );
+};
+
+} );
