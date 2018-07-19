@@ -41,6 +41,7 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             postCategory.MetaDescription = postCategoryVm.MetaDescription;
             postCategory.Status = postCategoryVm.Status;
         }
+
         //productCategory
 
         public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryVm)

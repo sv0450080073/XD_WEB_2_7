@@ -1,9 +1,9 @@
-define( [
+define([
 	"../../core",
 	"../../selector"
 
 	// css is assumed
-], function( jQuery ) {
+], function (jQuery) {
 	"use strict";
 
 	// isHiddenWithinTree reports if an element has a non-"none" display style (inline and/or
@@ -13,8 +13,7 @@ define( [
 	// * Being disconnected from the document does not force an element to be classified as hidden.
 	// These differences improve the behavior of .toggle() et al. when applied to elements that are
 	// detached or contained within hidden ancestors (gh-2404, gh-2863).
-	return function( elem, el ) {
-
+	return function (elem, el) {
 		// isHiddenWithinTree might be called from jQuery#filter function;
 		// in that case, element will be second argument
 		elem = el || elem;
@@ -27,8 +26,8 @@ define( [
 			// Support: Firefox <=43 - 45
 			// Disconnected elements can have computed display: none, so first confirm that elem is
 			// in the document.
-			jQuery.contains( elem.ownerDocument, elem ) &&
+			jQuery.contains(elem.ownerDocument, elem) &&
 
-			jQuery.css( elem, "display" ) === "none";
+			jQuery.css(elem, "display") === "none";
 	};
-} );
+});

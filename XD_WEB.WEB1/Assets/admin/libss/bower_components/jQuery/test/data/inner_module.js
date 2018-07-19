@@ -1,1 +1,1 @@
-window.ok( true, "evaluated: inner module with src" );
+window.ok(true, "evaluated: inner module with src");

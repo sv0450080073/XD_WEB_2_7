@@ -1,7 +1,5 @@
-﻿
-(function (app) {
+﻿(function (app) {
     app.factory('notificationService', notificationService);
-
 
     //trang chủ toastr
     function notificationService() {
@@ -40,8 +38,6 @@
             displayError: displayError,
             displayWarning: displayWarning,
             displayInfo: displayInfo
-
         }
     }
-
 })(angular.module('xd_web.common'));

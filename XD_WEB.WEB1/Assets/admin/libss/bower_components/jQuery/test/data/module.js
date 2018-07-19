@@ -1,1 +1,1 @@
-window.ok( true, "evaluated: module with src" );
+window.ok(true, "evaluated: module with src");

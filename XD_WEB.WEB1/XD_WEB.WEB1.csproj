@@ -247,6 +247,8 @@
     <Content Include="app\component\product_categories\productCategories.mudule.js" />
     <Content Include="app\component\product_categories\productCategoryAddController.js" />
     <Content Include="app\component\product_categories\productCategoryAddView.html" />
+    <Content Include="app\component\product_categories\productCategoryEditController.js" />
+    <Content Include="app\component\product_categories\productCategoryEditView.html" />
     <Content Include="app\component\product_categories\productCategoryListController.js" />
     <Content Include="app\component\product_categories\productCategoryListView.html" />
     <Content Include="app\share\directives\pagerDirective.html" />
@@ -254,6 +256,7 @@
     <Content Include="app\share\filters\statusFilter.js" />
     <Content Include="app\share\modules\xd_web.common.js" />
     <Content Include="app\share\services\apiService.js" />
+    <Content Include="app\share\services\commonService.js" />
     <Content Include="app\share\services\notificationService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />

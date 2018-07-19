@@ -15,7 +15,7 @@ this.hasPHP = true;
 this.isLocal = window.location.protocol === "file:";
 
 // Setup global variables before loading jQuery for testing .noConflict()
-supportjQuery.noConflict( true );
+supportjQuery.noConflict(true);
 window.originaljQuery = this.jQuery = undefined;
 window.original$ = this.$ = "replaced";
 
@@ -24,12 +24,12 @@ window.original$ = this.$ = "replaced";
  * @example q( "main", "foo", "bar" )
  * @result [<div id="main">, <span id="foo">, <input id="bar">]
  */
-this.q = function() {
+this.q = function () {
 	var r = [],
 		i = 0;
 
-	for ( ; i < arguments.length; i++ ) {
-		r.push( document.getElementById( arguments[ i ] ) );
+	for (; i < arguments.length; i++) {
+		r.push(document.getElementById(arguments[i]));
 	}
 	return r;
 };
@@ -42,16 +42,16 @@ this.q = function() {
  * @param {(String|Node)=document} context - Selector context
  * @example match("Check for something", "p", ["foo", "bar"]);
  */
-function match( message, selector, expectedIds, context ) {
-	var f = jQuery( selector, context ).get(),
+function match(message, selector, expectedIds, context) {
+	var f = jQuery(selector, context).get(),
 		s = "",
 		i = 0;
 
-	for ( ; i < f.length; i++ ) {
-		s += ( s && "," ) + "\"" + f[ i ].id + "\"";
+	for (; i < f.length; i++) {
+		s += (s && ",") + "\"" + f[i].id + "\"";
 	}
 
-	this.deepEqual( f, q.apply( q, expectedIds ), message + " (" + selector + ")" );
+	this.deepEqual(f, q.apply(q, expectedIds), message + " (" + selector + ")");
 }
 
 /**
@@ -62,8 +62,8 @@ function match( message, selector, expectedIds, context ) {
  * @param {String} expectedIds - Array of ids to construct what is expected
  * @example t("Check for something", "p", ["foo", "bar"]);
  */
-QUnit.assert.t = function( message, selector, expectedIds ) {
-	match( message, selector, expectedIds, undefined );
+QUnit.assert.t = function (message, selector, expectedIds) {
+	match(message, selector, expectedIds, undefined);
 };
 
 /**
@@ -74,11 +74,11 @@ QUnit.assert.t = function( message, selector, expectedIds ) {
  * @param {String} expectedIds - Array of ids to construct what is expected
  * @example selectInFixture("Check for something", "p", ["foo", "bar"]);
  */
-QUnit.assert.selectInFixture = function( message, selector, expectedIds ) {
-	match( message, selector, expectedIds, "#qunit-fixture" );
+QUnit.assert.selectInFixture = function (message, selector, expectedIds) {
+	match(message, selector, expectedIds, "#qunit-fixture");
 };
 
-this.createDashboardXML = function() {
+this.createDashboardXML = function () {
 	var string = "<?xml version='1.0' encoding='UTF-8'?> \
 	<dashboard> \
 		<locations class='foo'> \
@@ -91,10 +91,10 @@ this.createDashboardXML = function() {
 		</locations> \
 	</dashboard>";
 
-	return jQuery.parseXML( string );
+	return jQuery.parseXML(string);
 };
 
-this.createWithFriesXML = function() {
+this.createWithFriesXML = function () {
 	var string = "<?xml version='1.0' encoding='UTF-8'?> \
 	<soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/' \
 		xmlns:xsd='http://www.w3.org/2001/XMLSchema' \
@@ -121,33 +121,33 @@ this.createWithFriesXML = function() {
 		</soap:Body> \
 	</soap:Envelope>";
 
-	return jQuery.parseXML( string.replace( /\{\{\s*externalHost\s*\}\}/g, externalHost ) );
+	return jQuery.parseXML(string.replace(/\{\{\s*externalHost\s*\}\}/g, externalHost));
 };
 
-this.createXMLFragment = function() {
+this.createXMLFragment = function () {
 	var xml, frag;
-	if ( window.ActiveXObject ) {
-		xml = new window.ActiveXObject( "msxml2.domdocument" );
+	if (window.ActiveXObject) {
+		xml = new window.ActiveXObject("msxml2.domdocument");
 	} else {
-		xml = document.implementation.createDocument( "", "", null );
+		xml = document.implementation.createDocument("", "", null);
 	}
 
-	if ( xml ) {
-		frag = xml.createElement( "data" );
+	if (xml) {
+		frag = xml.createElement("data");
 	}
 
 	return frag;
 };
 
 window.fireNative = document.createEvent ?
-	function( node, type ) {
-		var event = document.createEvent( "HTMLEvents" );
+	function (node, type) {
+		var event = document.createEvent("HTMLEvents");
 
-		event.initEvent( type, true, true );
-		node.dispatchEvent( event );
+		event.initEvent(type, true, true);
+		node.dispatchEvent(event);
 	} :
-	function( node, type ) {
-		node.fireEvent( "on" + type, document.createEventObject() );
+	function (node, type) {
+		node.fireEvent("on" + type, document.createEventObject());
 	};
 
 /**
@@ -161,117 +161,117 @@ window.fireNative = document.createEvent ?
  * @example url("mock.php?foo=bar")
  * @result "data/mock.php?foo=bar&10538358345554"
  */
-function url( value ) {
-	return baseURL + value + ( /\?/.test( value ) ? "&" : "?" ) +
-		new Date().getTime() + "" + parseInt( Math.random() * 100000, 10 );
+function url(value) {
+	return baseURL + value + (/\?/.test(value) ? "&" : "?") +
+		new Date().getTime() + "" + parseInt(Math.random() * 100000, 10);
 }
 
 // Ajax testing helper
-this.ajaxTest = function( title, expect, options ) {
-	QUnit.test( title, expect, function( assert ) {
+this.ajaxTest = function (title, expect, options) {
+	QUnit.test(title, expect, function (assert) {
 		var requestOptions;
 
-		if ( typeof options === "function" ) {
-			options = options( assert );
+		if (typeof options === "function") {
+			options = options(assert);
 		}
 		options = options || [];
 		requestOptions = options.requests || options.request || options;
-		if ( !Array.isArray( requestOptions ) ) {
-			requestOptions = [ requestOptions ];
+		if (!Array.isArray(requestOptions)) {
+			requestOptions = [requestOptions];
 		}
 
 		var done = assert.async();
 
-		if ( options.setup ) {
+		if (options.setup) {
 			options.setup();
 		}
 
 		var completed = false,
 			remaining = requestOptions.length,
-			complete = function() {
-				if ( !completed && --remaining === 0 ) {
+			complete = function () {
+				if (!completed && --remaining === 0) {
 					completed = true;
 					delete ajaxTest.abort;
-					if ( options.teardown ) {
+					if (options.teardown) {
 						options.teardown();
 					}
 
 					// Make sure all events will be called before done()
-					setTimeout( done );
+					setTimeout(done);
 				}
 			},
-			requests = jQuery.map( requestOptions, function( options ) {
-				var request = ( options.create || jQuery.ajax )( options ),
-					callIfDefined = function( deferType, optionType ) {
-						var handler = options[ deferType ] || !!options[ optionType ];
-						return function( _, status ) {
-							if ( !completed ) {
-								if ( !handler ) {
-									assert.ok( false, "unexpected " + status );
-								} else if ( typeof handler === "function" ) {
-									handler.apply( this, arguments );
+			requests = jQuery.map(requestOptions, function (options) {
+				var request = (options.create || jQuery.ajax)(options),
+					callIfDefined = function (deferType, optionType) {
+						var handler = options[deferType] || !!options[optionType];
+						return function (_, status) {
+							if (!completed) {
+								if (!handler) {
+									assert.ok(false, "unexpected " + status);
+								} else if (typeof handler === "function") {
+									handler.apply(this, arguments);
 								}
 							}
 						};
 					};
 
-				if ( options.afterSend ) {
-					options.afterSend( request, assert );
+				if (options.afterSend) {
+					options.afterSend(request, assert);
 				}
 
 				return request
-					.done( callIfDefined( "done", "success" ) )
-					.fail( callIfDefined( "fail", "error" ) )
-					.always( complete );
-			} );
+					.done(callIfDefined("done", "success"))
+					.fail(callIfDefined("fail", "error"))
+					.always(complete);
+			});
 
-		ajaxTest.abort = function( reason ) {
-			if ( !completed ) {
+		ajaxTest.abort = function (reason) {
+			if (!completed) {
 				completed = true;
 				delete ajaxTest.abort;
-				assert.ok( false, "aborted " + reason );
-				jQuery.each( requests, function( i, request ) {
+				assert.ok(false, "aborted " + reason);
+				jQuery.each(requests, function (i, request) {
 					request.abort();
-				} );
+				});
 			}
 		};
-	} );
+	});
 };
 
-this.testIframe = function( title, fileName, func, wrapper ) {
-	if ( !wrapper ) {
+this.testIframe = function (title, fileName, func, wrapper) {
+	if (!wrapper) {
 		wrapper = QUnit.test;
 	}
-	wrapper.call( QUnit, title, function( assert ) {
+	wrapper.call(QUnit, title, function (assert) {
 		var done = assert.async(),
-			$iframe = supportjQuery( "<iframe/>" )
-				.css( { position: "absolute", top: "0", left: "-600px", width: "500px" } )
-				.attr( { id: "qunit-fixture-iframe", src: url( fileName ) } );
+			$iframe = supportjQuery("<iframe/>")
+				.css({ position: "absolute", top: "0", left: "-600px", width: "500px" })
+				.attr({ id: "qunit-fixture-iframe", src: url(fileName) });
 
 		// Test iframes are expected to invoke this via startIframeTest (cf. iframeTest.js)
-		window.iframeCallback = function() {
-			var args = Array.prototype.slice.call( arguments );
+		window.iframeCallback = function () {
+			var args = Array.prototype.slice.call(arguments);
 
-			args.unshift( assert );
+			args.unshift(assert);
 
-			setTimeout( function() {
+			setTimeout(function () {
 				this.iframeCallback = undefined;
 
-				func.apply( this, args );
-				func = function() {};
+				func.apply(this, args);
+				func = function () { };
 				$iframe.remove();
 				done();
-			} );
+			});
 		};
 
 		// Attach iframe to the body for visibility-dependent code
 		// It will be removed by either the above code, or the testDone callback in testrunner.js
-		$iframe.prependTo( document.body );
-	} );
+		$iframe.prependTo(document.body);
+	});
 };
 this.iframeCallback = undefined;
 
-if ( window.__karma__ ) {
+if (window.__karma__) {
 	// In Karma, files are served from /base
 	baseURL = "base/test/data/";
 } else {
@@ -281,22 +281,21 @@ if ( window.__karma__ ) {
 }
 
 // Leverage QUnit URL parsing to detect testSwarm environment and "basic" testing mode
-QUnit.isSwarm = ( QUnit.urlParams.swarmURL + "" ).indexOf( "http" ) === 0;
-QUnit.basicTests = ( QUnit.urlParams.module + "" ) === "basic";
+QUnit.isSwarm = (QUnit.urlParams.swarmURL + "").indexOf("http") === 0;
+QUnit.basicTests = (QUnit.urlParams.module + "") === "basic";
 
 // Async test for module script type support
 function moduleTypeSupported() {
-	var script = document.createElement( "script" );
+	var script = document.createElement("script");
 	script.type = "module";
 	script.text = "QUnit.moduleTypeSupported = true";
-	document.head.appendChild( script ).parentNode.removeChild( script );
+	document.head.appendChild(script).parentNode.removeChild(script);
 }
 moduleTypeSupported();
 
-this.loadTests = function() {
-
+this.loadTests = function () {
 	// Get testSubproject from testrunner first
-	require( [ "data/testrunner.js" ], function() {
+	require(["data/testrunner.js"], function () {
 		var i = 0,
 			tests = [
 				// A special module with basic tests, meant for
@@ -329,21 +328,20 @@ this.loadTests = function() {
 			];
 
 		// Ensure load order (to preserve test numbers)
-		( function loadDep() {
-			var dep = tests[ i++ ];
+		(function loadDep() {
+			var dep = tests[i++];
 
-			if ( dep ) {
-				if ( !QUnit.basicTests || i === 1 ) {
-					require( [ dep ], loadDep );
+			if (dep) {
+				if (!QUnit.basicTests || i === 1) {
+					require([dep], loadDep);
 
-				// Support: Android 2.3 only
-				// When running basic tests, replace other modules with dummies to avoid overloading
-				// impaired clients.
+					// Support: Android 2.3 only
+					// When running basic tests, replace other modules with dummies to avoid overloading
+					// impaired clients.
 				} else {
-					QUnit.module( dep.replace( /^.*\/|\.js$/g, "" ) );
+					QUnit.module(dep.replace(/^.*\/|\.js$/g, ""));
 					loadDep();
 				}
-
 			} else {
 				QUnit.load();
 
@@ -353,15 +351,15 @@ this.loadTests = function() {
 				jQuery.noConflict();
 
 				// Load the TestSwarm listener if swarmURL is in the address.
-				if ( QUnit.isSwarm ) {
-					require( [ "http://swarm.jquery.org/js/inject.js?" + ( new Date() ).getTime() ],
-					function() {
-						QUnit.start();
-					} );
+				if (QUnit.isSwarm) {
+					require(["http://swarm.jquery.org/js/inject.js?" + (new Date()).getTime()],
+						function () {
+							QUnit.start();
+						});
 				} else {
 					QUnit.start();
 				}
 			}
-		} )();
-	} );
+		})();
+	});
 };

@@ -1,6 +1,6 @@
-define( [
+define([
 	"../var/document"
-], function( document ) {
+], function (document) {
 	"use strict";
 
 	var preservedScriptAttributes = {
@@ -9,22 +9,22 @@ define( [
 		noModule: true
 	};
 
-	function DOMEval( code, doc, node ) {
+	function DOMEval(code, doc, node) {
 		doc = doc || document;
 
 		var i,
-			script = doc.createElement( "script" );
+			script = doc.createElement("script");
 
 		script.text = code;
-		if ( node ) {
-			for ( i in preservedScriptAttributes ) {
-				if ( node[ i ] ) {
-					script[ i ] = node[ i ];
+		if (node) {
+			for (i in preservedScriptAttributes) {
+				if (node[i]) {
+					script[i] = node[i];
 				}
 			}
 		}
-		doc.head.appendChild( script ).parentNode.removeChild( script );
+		doc.head.appendChild(script).parentNode.removeChild(script);
 	}
 
 	return DOMEval;
-} );
+});

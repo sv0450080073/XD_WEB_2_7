@@ -13,93 +13,93 @@ var DEFAULT_NG_VERSION = '1.6';
  * included: false -- files *available to be served* by karma, for instance via require()
  */
 function karmaServedFiles(ngVersion) {
-  // Returns necessary files for a specific version of angular
-  function angular(version) {
-    console.log('Using Angular ' + ngVersion + ' from test/angular/' + version + '/angular.js');
+    // Returns necessary files for a specific version of angular
+    function angular(version) {
+        console.log('Using Angular ' + ngVersion + ' from test/angular/' + version + '/angular.js');
 
-    return [
-      'test/angular/' + version + '/angular.js',
-      'test/angular/' + version + '/angular-mocks.js',
-      'test/angular/' + version + '/angular-animate.js',
-    ];
-  }
+        return [
+            'test/angular/' + version + '/angular.js',
+            'test/angular/' + version + '/angular-mocks.js',
+            'test/angular/' + version + '/angular-animate.js',
+        ];
+    }
 
-  var angularFiles = angular(ngVersion).map(function(pattern) {
-    return { watched: false, included: true, nocache: true, pattern: pattern };
-  });
+    var angularFiles = angular(ngVersion).map(function (pattern) {
+        return { watched: false, included: true, nocache: true, pattern: pattern };
+    });
 
-  return angularFiles.concat('test/index.js');
+    return angularFiles.concat('test/index.js');
 }
 
-module.exports = function(config) {
-  var ngVersion = config.ngversion || DEFAULT_NG_VERSION;
+module.exports = function (config) {
+    var ngVersion = config.ngversion || DEFAULT_NG_VERSION;
 
-  config.set({
-    singleRun: true,
-    autoWatch: false,
-    autoWatchInterval: 0,
+    config.set({
+        singleRun: true,
+        autoWatch: false,
+        autoWatchInterval: 0,
 
-    // level of logging
-    // possible values: LOG_DISABLE, LOG_ERROR, LOG_WARN, LOG_INFO, LOG_DEBUG
-    logLevel: 'warn',
+        // level of logging
+        // possible values: LOG_DISABLE, LOG_ERROR, LOG_WARN, LOG_INFO, LOG_DEBUG
+        logLevel: 'warn',
 
-    reporters: ['super-dots', 'mocha'],
-    colors: true,
-    mochaReporter: {
-      output: 'minimal',
-    },
+        reporters: ['super-dots', 'mocha'],
+        colors: true,
+        mochaReporter: {
+            output: 'minimal',
+        },
 
-    port: 8080,
+        port: 8080,
 
-    // base path, that will be used to resolve files and exclude
-    basePath: '.',
+        // base path, that will be used to resolve files and exclude
+        basePath: '.',
 
-    // Start these browsers, currently available:
-    // Chrome, ChromeCanary, Firefox, Opera, Safari, PhantomJS
-    browsers: ['ChromeHeadlessNoSandbox'],
-    customLaunchers: {
-      ChromeHeadlessNoSandbox: { base: 'ChromeHeadless', flags: ['--no-sandbox'] },
-    },
+        // Start these browsers, currently available:
+        // Chrome, ChromeCanary, Firefox, Opera, Safari, PhantomJS
+        browsers: ['ChromeHeadlessNoSandbox'],
+        customLaunchers: {
+            ChromeHeadlessNoSandbox: { base: 'ChromeHeadless', flags: ['--no-sandbox'] },
+        },
 
-    frameworks: ['jasmine'],
+        frameworks: ['jasmine'],
 
-    plugins: [
-      require('karma-webpack'),
-      require('karma-sourcemap-loader'),
-      require('karma-super-dots-reporter'),
-      require('karma-mocha-reporter'),
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-    ],
+        plugins: [
+            require('karma-webpack'),
+            require('karma-sourcemap-loader'),
+            require('karma-super-dots-reporter'),
+            require('karma-mocha-reporter'),
+            require('karma-jasmine'),
+            require('karma-chrome-launcher'),
+        ],
 
-    webpack: {
-      mode: 'development',
-      resolve: {
-        modules: ['node_modules'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
+        webpack: {
+            mode: 'development',
+            resolve: {
+                modules: ['node_modules'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            },
 
-      devtool: 'inline-source-map',
+            devtool: 'inline-source-map',
 
-      module: {
-        rules: [{ test: /\.tsx?$/, loader: 'ts-loader', options: { transpileOnly: true } }],
-      },
+            module: {
+                rules: [{ test: /\.tsx?$/, loader: 'ts-loader', options: { transpileOnly: true } }],
+            },
 
-      plugins: [new ForkTsCheckerWebpackPlugin()],
+            plugins: [new ForkTsCheckerWebpackPlugin()],
 
-      externals: ['angular'],
-    },
+            externals: ['angular'],
+        },
 
-    webpackMiddleware: {
-      stats: 'minimal',
-    },
+        webpackMiddleware: {
+            stats: 'minimal',
+        },
 
-    /* Files *available to be served* by karma, i.e., anything that will be require()'d */
-    files: karmaServedFiles(ngVersion),
+        /* Files *available to be served* by karma, i.e., anything that will be require()'d */
+        files: karmaServedFiles(ngVersion),
 
-    preprocessors: {
-      'test/index.js': ['webpack', 'sourcemap'],
-      '../src/ng1': ['webpack', 'sourcemap'],
-    },
-  });
+        preprocessors: {
+            'test/index.js': ['webpack', 'sourcemap'],
+            '../src/ng1': ['webpack', 'sourcemap'],
+        },
+    });
 };

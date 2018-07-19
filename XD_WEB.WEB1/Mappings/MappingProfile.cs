@@ -8,6 +8,7 @@ namespace XD_WEB.WEB1.Mappings
     {
         public MappingProfile()
         {
+            // chuyển bảng thật sang bảng view ->để hiển thị
             CreateMap<Post, PostViewModel>();
             CreateMap<PostCategory, PostCategoryViewModel>();
             CreateMap<Tag, TagViewModel>();

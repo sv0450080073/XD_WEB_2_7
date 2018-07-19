@@ -53,5 +53,4 @@
 			document.write( "<script src='" + path + "test/unit/ready.js'><\x2Fscript>" );
 		}
 	}
-
 } )();

@@ -1,7 +1,7 @@
-define( [
+define([
 	"./cssExpand"
-], function( cssExpand ) {
+], function (cssExpand) {
 	"use strict";
 
-	return new RegExp( cssExpand.join( "|" ), "i" );
-} );
+	return new RegExp(cssExpand.join("|"), "i");
+});

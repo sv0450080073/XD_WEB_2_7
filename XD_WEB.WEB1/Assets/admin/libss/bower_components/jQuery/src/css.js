@@ -19,7 +19,6 @@ define( [
 	"./selector" // contains
 ], function( jQuery, pnum, access, camelCase, document, rcssNum, rnumnonpx, cssExpand,
 	getStyles, swap, curCSS, adjustCSS, addGetHookIf, support ) {
-
 "use strict";
 
 var
@@ -40,7 +39,6 @@ var
 
 // Return a css property mapped to a potentially vendor prefixed property
 function vendorPropName( name ) {
-
 	// Shortcut for names that are not vendor prefixed
 	if ( name in emptyStyle ) {
 		return name;
@@ -69,7 +67,6 @@ function finalPropName( name ) {
 }
 
 function setPositiveNumber( elem, value, subtract ) {
-
 	// Any relative (+/-) values have already been
 	// normalized at this point
 	var matches = rcssNum.exec( value );
@@ -91,7 +88,6 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 	}
 
 	for ( ; i < 4; i += 2 ) {
-
 		// Both box models exclude margin
 		if ( box === "margin" ) {
 			delta += jQuery.css( elem, box + cssExpand[ i ], true, styles );
@@ -99,7 +95,6 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 
 		// If we get here with a content-box, we're seeking "padding" or "border" or "margin"
 		if ( !isBorderBox ) {
-
 			// Add padding
 			delta += jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
 
@@ -115,7 +110,6 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 		// If we get here with a border-box (content + padding + border), we're seeking "content" or
 		// "padding" or "margin"
 		} else {
-
 			// For "content", subtract padding
 			if ( box === "content" ) {
 				delta -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
@@ -130,7 +124,6 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 
 	// Account for positive content-box scroll gutter when requested by providing computedVal
 	if ( !isBorderBox && computedVal >= 0 ) {
-
 		// offsetWidth/offsetHeight is a rounded sum of content, padding, scroll gutter, and border
 		// Assuming integer scroll gutter, subtract the rest and round down
 		delta += Math.max( 0, Math.ceil(
@@ -146,7 +139,6 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 }
 
 function getWidthOrHeight( elem, dimension, extra ) {
-
 	// Start with computed style
 	var styles = getStyles( elem ),
 		val = curCSS( elem, dimension, styles ),
@@ -173,7 +165,6 @@ function getWidthOrHeight( elem, dimension, extra ) {
 	// Also use offsetWidth/offsetHeight for misreported inline dimensions (gh-3602)
 	if ( val === "auto" ||
 		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) {
-
 		val = elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ];
 
 		// offsetWidth/offsetHeight provide border-box values
@@ -199,14 +190,12 @@ function getWidthOrHeight( elem, dimension, extra ) {
 }
 
 jQuery.extend( {
-
 	// Add in style property hooks for overriding the default
 	// behavior of getting and setting a style property
 	cssHooks: {
 		opacity: {
 			get: function( elem, computed ) {
 				if ( computed ) {
-
 					// We should always get a number back from opacity
 					var ret = curCSS( elem, "opacity" );
 					return ret === "" ? "1" : ret;
@@ -238,7 +227,6 @@ jQuery.extend( {
 
 	// Get and set the style property on a DOM Node
 	style: function( elem, name, value, extra ) {
-
 		// Don't set styles on text and comment nodes
 		if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
 			return;
@@ -290,20 +278,16 @@ jQuery.extend( {
 			// If a hook was provided, use that value, otherwise just set the specified value
 			if ( !hooks || !( "set" in hooks ) ||
 				( value = hooks.set( elem, value, extra ) ) !== undefined ) {
-
 				if ( isCustomProp ) {
 					style.setProperty( name, value );
 				} else {
 					style[ name ] = value;
 				}
 			}
-
 		} else {
-
 			// If a hook was provided get the non-computed value from there
 			if ( hooks && "get" in hooks &&
 				( ret = hooks.get( elem, false, extra ) ) !== undefined ) {
-
 				return ret;
 			}
 
@@ -356,7 +340,6 @@ jQuery.each( [ "height", "width" ], function( i, dimension ) {
 	jQuery.cssHooks[ dimension ] = {
 		get: function( elem, computed, extra ) {
 			if ( computed ) {
-
 				// Certain elements can have dimension info if we invisibly show them
 				// but it must have a current display style that would benefit
 				return rdisplayswap.test( jQuery.css( elem, "display" ) ) &&
@@ -401,7 +384,6 @@ jQuery.each( [ "height", "width" ], function( i, dimension ) {
 			// Convert to pixels if value adjustment is needed
 			if ( subtract && ( matches = rcssNum.exec( value ) ) &&
 				( matches[ 3 ] || "px" ) !== "px" ) {
-
 				elem.style[ dimension ] = value;
 				value = jQuery.css( elem, dimension );
 			}

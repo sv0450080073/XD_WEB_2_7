@@ -19,7 +19,6 @@ QUnit.module( "ready" );
 
 	// Create an event handler.
 	function makeHandler( testId ) {
-
 		// When returned function is executed, push testId onto `order` array
 		// to ensure execution order. Also, store event handler arg to ensure
 		// the correct arg is being passed into the event handler.
@@ -30,7 +29,6 @@ QUnit.module( "ready" );
 	}
 
 	function throwError( num ) {
-
 		// Not a global QUnit failure
 		var onerror = window.onerror;
 		window.onerror = function() {
@@ -159,5 +157,4 @@ QUnit.module( "ready" );
 			assert.ok( releaseCalled, "The release function was called, which resulted in ready" );
 		}
 	);
-
 } )();

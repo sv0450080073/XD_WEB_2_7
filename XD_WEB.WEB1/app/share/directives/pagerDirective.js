@@ -1,5 +1,4 @@
-﻿
-(function (app) {
+﻿(function (app) {
     'use strict';
 
     app.directive('pageDirective', pagerDirective);
@@ -37,7 +36,6 @@
                         if (end > $scope.pagesCount) { end = $scope.pagesCount; }
                         var ret = [];
                         for (var i = start; i != end; ++i) {
-
                             ret.push(i);
                         }
                         return ret;
@@ -45,12 +43,8 @@
                     $scope.pagePlus = function (count) {
                         return + $scop.page + count;
                     }
-
                 }
             ]
         }
     }
-
-
-
 })(angular.module('xd_web.common'));

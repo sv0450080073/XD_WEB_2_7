@@ -14,7 +14,7 @@ namespace XD_WEB.WEB1
                 defaults: new { id = RouteParameter.Optional }
             );
             // Web API routes
-         
+
             config.Routes.MapHttpRoute(
             name: "Default_Api",
                 routeTemplate: "api/{controller}/{action}/{id}",

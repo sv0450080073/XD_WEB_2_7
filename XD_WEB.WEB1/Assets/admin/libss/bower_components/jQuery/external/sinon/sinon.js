@@ -5,13 +5,13 @@
  * @author Contributors: https://github.com/cjohansen/Sinon.JS/blob/master/AUTHORS
  *
  * (The BSD License)
- * 
+ *
  * Copyright (c) 2010-2014, Christian Johansen, christian@cjohansen.no
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- * 
+ *
  *     * Redistributions of source code must retain the above copyright notice,
  *       this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright notice,
@@ -20,7 +20,7 @@
  *     * Neither the name of Christian Johansen nor the names of his contributors
  *       may be used to endorse or promote products derived from this software
  *       without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -179,7 +179,6 @@
         }
     }
 
-
     /**
      * @name samsam.deepEqual
      * @param Object obj1
@@ -196,7 +195,6 @@
      * Supports cyclic objects.
      */
     function deepEqualCyclic(obj1, obj2) {
-
         // used for cyclic comparison
         // contain already visited objects
         var objects1 = [],
@@ -216,14 +214,12 @@
          * only needed for cyclic logic
          */
         function isObject(value) {
-
             if (typeof value === 'object' && value !== null &&
                     !(value instanceof Boolean) &&
                     !(value instanceof Date)    &&
                     !(value instanceof Number)  &&
                     !(value instanceof RegExp)  &&
                     !(value instanceof String)) {
-
                 return true;
             }
 
@@ -236,7 +232,6 @@
          * only needed for cyclic logic
          */
         function getIndex(objects, obj) {
-
             var i;
             for (i = 0; i < objects.length; i++) {
                 if (objects[i] === obj) {
@@ -257,7 +252,6 @@
                     isNaN(obj1) || isNaN(obj2) ||
                     obj1 == null || obj2 == null ||
                     type1 !== "object" || type2 !== "object") {
-
                 return identical(obj1, obj2);
             }
 
@@ -357,7 +351,6 @@
             }
 
             return true;
-
         }(obj1, obj2, '$1', '$2'));
     }
 
@@ -463,7 +456,6 @@
     module.exports = m(require("samsam"));
 }) || function (m) { this.formatio = m(this.samsam); }
 )(function (samsam) {
-    
     var formatio = {
         excludeConstructors: ["Object", /^.$/],
         quoteStrings: true,
@@ -566,7 +558,7 @@
         processed.push(array);
         var pieces = [];
         var i, l;
-        l = (this.limitChildrenCount > 0) ? 
+        l = (this.limitChildrenCount > 0) ?
             Math.min(this.limitChildrenCount, array.length) : array.length;
 
         for (i = 0; i < l; ++i) {
@@ -586,7 +578,7 @@
         var pieces = [], properties = samsam.keys(object).sort();
         var length = 3;
         var prop, str, obj, i, k, l;
-        l = (this.limitChildrenCount > 0) ? 
+        l = (this.limitChildrenCount > 0) ?
             Math.min(this.limitChildrenCount, properties.length) : properties.length;
 
         for (i = 0; i < l; ++i) {
@@ -680,7 +672,6 @@
  */
 
 (function (global) {
-    
     // Make properties writable in IE, as per
     // http://www.adequatelygood.com/Replacing-setTimeout-Globally.html
     // JSLint being anal
@@ -847,7 +838,6 @@
 
         return timer.id;
     }
-
 
     function compareTimers(a, b) {
         // Sort first by absolute timing
@@ -1219,9 +1209,7 @@
 
         return clock;
     };
-
 }(global || this));
-
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}]},{},[1])(1)
 });
@@ -1238,7 +1226,7 @@
 var sinon = (function () {
 "use strict";
  // eslint-disable-line no-unused-vars
-    
+
     var sinonModule;
     var isNode = typeof module !== "undefined" && module.exports && typeof require === "function";
     var isAMD = typeof define === "function" && typeof define.amd === "object" && define.amd;
@@ -1288,7 +1276,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     var div = typeof document !== "undefined" && document.createElement("div");
     var hasOwn = Object.prototype.hasOwnProperty;
 
@@ -1681,9 +1668,7 @@ var sinon = (function () {
  * @depend util/core.js
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
-
         // Adapted from https://developer.mozilla.org/en/docs/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug
         var hasDontEnumBug = (function () {
             var obj = {
@@ -1792,9 +1777,7 @@ var sinon = (function () {
  * @depend util/core.js
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
-
         function timesInWords(count) {
             switch (count) {
                 case 1:
@@ -1849,7 +1832,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2014 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         function typeOf(value) {
             if (value === null) {
@@ -1905,7 +1887,6 @@ var sinon = (function () {
  * Copyright (c) 2012 Maximilian Antoni
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         function assertType(value, type, name) {
             var actual = sinon.typeOf(value);
@@ -2163,7 +2144,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2014 Christian Johansen
  */
 (function (sinonGlobal, formatio) {
-    
     function makeApi(sinon) {
         function valueFormatter(value) {
             return "" + value;
@@ -2261,7 +2241,6 @@ var sinon = (function () {
   * Copyright (c) 2013 Maximilian Antoni
   */
 (function (sinonGlobal) {
-    
     var slice = Array.prototype.slice;
 
     function makeApi(sinon) {
@@ -2427,7 +2406,6 @@ var sinon = (function () {
                 }
                 if (this.stack) {
                     callStr += this.getStackFrames()[0].replace(/^\s*(?:at\s+|@)?/, " at ");
-
                 }
 
                 return callStr;
@@ -2500,7 +2478,6 @@ var sinon = (function () {
   * Copyright (c) 2010-2013 Christian Johansen
   */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         var push = Array.prototype.push;
         var slice = Array.prototype.slice;
@@ -2961,7 +2938,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     var slice = Array.prototype.slice;
     var join = Array.prototype.join;
     var useLeftMostCallback = -1;
@@ -3322,7 +3298,6 @@ var sinon = (function () {
  * @depend util/core.js
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         function walkInternal(obj, iterator, context, originalObj, seen) {
             var proto, prop;
@@ -3413,7 +3388,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         function stub(object, property, func) {
             if (!!func && typeof func !== "function" && typeof func !== "object") {
@@ -3464,7 +3438,6 @@ var sinon = (function () {
 
             return sinon.wrapMethod(object, property, wrapper);
         }
-
 
         /*eslint-disable no-use-before-define*/
         function getParentBehaviour(stubInstance) {
@@ -3616,7 +3589,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         var push = [].push;
         var match = sinon.match;
@@ -3940,7 +3912,6 @@ var sinon = (function () {
                 }
 
                 for (var i = 0, l = this.expectedArguments.length; i < l; i += 1) {
-
                     if (!verifyMatcher(this.expectedArguments[i], args[i])) {
                         sinon.expectation.fail(this.method + " received wrong arguments " + sinon.format(args) +
                             ", didn't match " + this.expectedArguments.toString());
@@ -4103,7 +4074,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     var push = [].push;
     var hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -4279,7 +4249,6 @@ var sinon = (function () {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function () {
-    
     function makeApi(s, lol) {
         /*global lolex */
         var llx = typeof lolex !== "undefined" ? lolex : lol;
@@ -4351,7 +4320,6 @@ if (typeof sinon === "undefined") {
 }
 
 (function () {
-    
     var push = [].push;
 
     function makeApi(sinon) {
@@ -4457,14 +4425,12 @@ if (typeof sinon === "undefined") {
  * Copyright (c) 2010-2014 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     // cache a reference to setTimeout, so that our reference won't be stubbed out
     // when using fake timers and errors will still get logged
     // https://github.com/cjohansen/Sinon.JS/issues/381
     var realSetTimeout = setTimeout;
 
     function makeApi(sinon) {
-
         function log() {}
 
         function logError(label, err) {
@@ -4545,7 +4511,6 @@ if (typeof sinon === "undefined") {
  * @private
  */
 function getGlobal() {
-    
     return typeof window !== "undefined" ? window : global;
 }
 
@@ -4559,7 +4524,6 @@ if (typeof sinon === "undefined") {
 
 // wrapper for global
 (function (global) {
-    
     var xdr = { XDomainRequest: global.XDomainRequest };
     xdr.GlobalXDomainRequest = global.XDomainRequest;
     xdr.supportsXDR = typeof xdr.GlobalXDomainRequest !== "undefined";
@@ -4782,7 +4746,6 @@ if (typeof sinon === "undefined") {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal, global) {
-    
     function getWorkingXHR(globalScope) {
         var supportsXHR = typeof globalScope.XMLHttpRequest !== "undefined";
         if (supportsXHR) {
@@ -5015,7 +4978,6 @@ if (typeof sinon === "undefined") {
         if (xhr.addEventListener) {
             for (var event in fakeXhr.eventListeners) {
                 if (fakeXhr.eventListeners.hasOwnProperty(event)) {
-
                     /*eslint-disable no-loop-func*/
                     each(fakeXhr.eventListeners[event], function (handler) {
                         xhr.addEventListener(event, handler);
@@ -5439,7 +5401,6 @@ if (typeof sinon === "undefined") {
             if (sinonXhr.supportsActiveX) {
                 global.ActiveXObject = function ActiveXObject(objId) {
                     if (objId === "Microsoft.XMLHTTP" || /^Msxml2\.XMLHTTP/i.test(objId)) {
-
                         return new FakeXMLHttpRequest();
                     }
 
@@ -5501,7 +5462,6 @@ if (typeof sinon === "undefined") {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function () {
-    
     var push = [].push;
 
     function responseArray(handler) {
@@ -5749,7 +5709,6 @@ if (typeof sinon === "undefined") {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function () {
-    
     function makeApi(sinon) {
         function Server() {}
         Server.prototype = sinon.fakeServer;
@@ -5848,7 +5807,6 @@ if (typeof sinon === "undefined") {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         var push = [].push;
 
@@ -6014,7 +5972,6 @@ if (typeof sinon === "undefined") {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     function makeApi(sinon) {
         var slice = Array.prototype.slice;
 
@@ -6114,7 +6071,6 @@ if (typeof sinon === "undefined") {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal) {
-    
     function createTest(property, setUp, tearDown) {
         return function () {
             if (setUp) {
@@ -6222,7 +6178,6 @@ if (typeof sinon === "undefined") {
  * Copyright (c) 2010-2013 Christian Johansen
  */
 (function (sinonGlobal, global) {
-    
     var slice = Array.prototype.slice;
 
     function makeApi(sinon) {
@@ -6249,7 +6204,6 @@ if (typeof sinon === "undefined") {
                         assert.fail(method + " is not stubbed");
                     }
                 }
-
             }
         }
 
