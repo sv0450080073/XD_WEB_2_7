@@ -41,6 +41,44 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             postCategory.MetaDescription = postCategoryVm.MetaDescription;
             postCategory.Status = postCategoryVm.Status;
         }
+        //productCategory
+
+        public static void UpdateProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryVm)
+        {
+            /**  public int ID { set; get; }
+          public string Name { set; get; }
+          public string Alias { set; get; }
+          public string Description { set; get; }
+          public int? ParentID { set; get; }
+          public int? DisplayOrder { set; get; }
+          public string Image { set; get; }
+          public bool? HomeFlag { set; get; }
+
+            DateTime? CreatedDate { set; get; }
+            string CreatedBy { set; get; }
+            DateTime? UpdatedDate { set; get; }
+            string UpdatedBy { set; get; }
+            string MetaKeyword { set; get; }
+            string MetaDescription { set; get; }
+            bool Status { set; get; }*/
+
+            productCategory.ID = productCategoryVm.ID;
+            productCategory.Name = productCategoryVm.Name;
+            productCategory.Alias = productCategoryVm.Alias;
+            productCategory.Description = productCategoryVm.Description;
+            productCategory.ParentID = productCategoryVm.ParentID;
+            productCategory.DisplayOrder = productCategoryVm.DisplayOrder;
+            productCategory.Image = productCategoryVm.Image;
+            productCategory.HomeFlag = productCategoryVm.HomeFlag;
+
+            productCategory.CreatedDate = productCategoryVm.CreatedDate;
+            productCategory.CreatedBy = productCategoryVm.CreatedBy;
+            productCategory.UpdatedDate = productCategoryVm.UpdatedDate;
+            productCategory.UpdatedBy = productCategoryVm.CreatedBy;
+            productCategory.MetaKeyword = productCategoryVm.MetaKeyword;
+            productCategory.MetaDescription = productCategoryVm.MetaDescription;
+            productCategory.Status = productCategoryVm.Status;
+        }
 
         public static void UpdatePost(this Post post, PostViewModel postVm)
         {

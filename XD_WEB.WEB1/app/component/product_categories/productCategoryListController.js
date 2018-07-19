@@ -8,7 +8,7 @@
         //phân trang 
         $scope.page = 0;
         $scope.pagesCount = 0;
-        $scope.totalCount = 0;
+        //$scope.totalCount = 0;
         $scope.getProductCategories = getProductCategories;
         $scope.keyword = '';
         $scope.search = search;
@@ -31,11 +31,11 @@
 
             apiService.get('/api/productcategory/getall', config, function (result) {
                 //Thông báo cho người dùng 
-                if (result.data.TotalCount == 0) {
+                if (result.data.TotalCount == 0) { 
                     notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
                 }
                 else {
-                    notificationService.displaySuccess('Đã tìm thấy.' + result.data.TotalCount+'bản ghi.');
+                    notificationService.displaySuccess('Đã tìm thấy ' + result.data.TotalCount +' bản ghi.');
                 }
                
                 $scope.productCategories = result.data.Items;

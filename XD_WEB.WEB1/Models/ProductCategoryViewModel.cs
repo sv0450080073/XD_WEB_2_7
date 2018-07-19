@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace XD_WEB.WEB1.Models
 {
@@ -7,8 +8,10 @@ namespace XD_WEB.WEB1.Models
     {
         public int ID { set; get; }
 
+        [Required]
         public string Name { set; get; }
 
+        [Required]
         public string Alias { set; get; }
 
         public string Description { set; get; }
@@ -28,6 +31,8 @@ namespace XD_WEB.WEB1.Models
         public string MetaKeyword { set; get; }
 
         public string MetaDescription { set; get; }
+
+        [Required]
         public bool Status { set; get; }
 
         //KHÓA CHÍNH

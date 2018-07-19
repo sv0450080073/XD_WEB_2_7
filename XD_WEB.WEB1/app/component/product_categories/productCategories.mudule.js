@@ -11,6 +11,11 @@
                 templateUrl: "/app/component/product_categories/productCategoryListView.html",
 
                 controller: "productCategoryListController"
-            });
+            }).state('add_product_category',
+                {
+                    url: "/add_product_category",
+                    templateUrl: "/app/component/product_categories/productCategoryAddView.html",
+                    controller: "productCategoryAddController"
+                });
     }
 })();// bắt buộc phải có nha () ko có báo lổi đó 
