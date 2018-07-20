@@ -18,6 +18,7 @@
     <link href="~/Assets/admin/libss/bower_components/toastr/toastr.css" rel="stylesheet" />
     <!-- Theme style -->
     <link rel="stylesheet" href="/Assets/admin/css/AdminLTE.min.css">
+    <link href="~/Assets/admin/css/custom.css" rel="stylesheet" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/Assets/admin/css/skins/_all-skins.min.css">
@@ -517,18 +518,26 @@
     <script src="/Assets/admin/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <!--  Begin embed angularJS  -->
+
+    <!--Phần thư viện của các gói package-->
     <script src="~/Assets/admin/libss/bower_components/angular/angular.js"></script>
     <script src="~/Assets/admin/libss/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/Assets/admin/libss/bower_components/toastr/toastr.js"></script>
+    <script src="~/Assets/admin/libss/bower_components/bootbox/bootbox.js"></script>
+    <script src="~/Assets/admin/libss/bower_components/ckeditor/ckeditor.js"></script>
+    <script src="~/Assets/admin/libss/bower_components/ngBootbox/ngBootbox.js"></script>
+    <script src="~/Assets/admin/libss/bower_components/ng-ckeditor/ng-ckeditor.js"></script>
+    <script src="~/Assets/admin/libss/ckfinder/ckfinder.js"></script>
 
+    <!--Phần share của dự án -->
     <script src="~/app/share/modules/xd_web.common.js"></script>
     <script src="~/app/share/filters/statusFilter.js"></script>
     <script src="~/app/share/services/apiService.js"></script>
-
     <script src="~/app/share/directives/pagerDirective.js"></script>
-
     <script src="~/app/share/services/notificationService.js"></script>
     <script src="~/app/share/services/commonService.js"></script>
+
+    <!--Các thành phần của dự án -->
     <script src="~/app/component/products/products.module.js"></script>
     <script src="~/app/component/product_categories/productCategories.mudule.js"></script>
 
@@ -536,11 +545,7 @@
 
     <script src="~/app/component/product_categories/productCategoryListController.js"></script>
     <script src="~/app/component/product_categories/productCategoryAddController.js"></script>
-
-
     <script src="~/app/component/product_categories/productCategoryEditController.js"></script>
-
-
     <script src="~/app/component/products/productAddController.js"></script>
     <script src="~/app/component/products/productListController.js"></script>
     <script src="~/app/component/home/homeController.js"></script>

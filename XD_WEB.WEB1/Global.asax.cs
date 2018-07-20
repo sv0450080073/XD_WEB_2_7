@@ -26,19 +26,5 @@ namespace XD_WEB.WEB1
         }
     }
 
-    // thử rồi ko thành
-    /* public class MappingConfig
-     {
-         public static AutoMapper.IMapper Mapping;
-         public static void RegisterMapping()
-         {
-             var mapperconfig = new AutoMapper.MapperConfiguration(config =>
-              {
-                  config.CreateMap<Post, PostViewModel>();
-                  config.CreateMap<PostCategory, PostCategoryViewModel>();
-                  config.CreateMap<Tag, TagViewModel>();
-              });
-             Mapping = mapperconfig.CreateMapper();
-         }
-     }*/
+    
 }

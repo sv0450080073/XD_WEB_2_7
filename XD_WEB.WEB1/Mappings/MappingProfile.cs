@@ -13,7 +13,9 @@ namespace XD_WEB.WEB1.Mappings
             CreateMap<PostCategory, PostCategoryViewModel>();
             CreateMap<Tag, TagViewModel>();
             CreateMap<Product, ProductViewModel>();
+
             CreateMap<ProductCategory, ProductCategoryViewModel>();
+
             CreateMap<ProductTag, ProductTagViewModel>();
         }
     }

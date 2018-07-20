@@ -7,10 +7,10 @@
         $scope.productCategory = {
             CreatedDate: new Date(),
             Status: true,
-            Name: "Danh mục 1"
+    
         }
 
-        //thêm thể lọa danh mục mới
+        //thêm thể lọai danh mục mới
         $scope.AddProductCategory = AddProductCategory;
         function AddProductCategory() {
             apiService.post('/api/productcategory/create', $scope.productCategory, function (result) {

@@ -113,5 +113,44 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             post.MetaDescription = postVm.MetaDescription;
             post.Status = postVm.Status;
         }
+
+
+        //updateProduct
+        public static void UpdateProduct(this Product product  , ProductViewModel productVm)
+        {
+            /* public int ID { set; get; }
+            public string Name { set; get; }
+            public string Alias { set; get; }
+            public int CategoryID { set; ge
+
+            public string Image { set; get; }
+            public string Description { set; get; }
+            public string Content { set; get; }
+            public bool? HomeFlag { set; get; }
+            public bool? HotFlag { set; get; }
+            public int? ViewCount { set; get; }
+            */
+            product.ID = productVm.ID;
+            product.Name = productVm.Name;
+            product.Alias = productVm.Alias;
+            product.CategoryID = productVm.CategoryID;
+            product.Image = productVm.Image;
+            product.MoreImages = productVm.MoreImages;
+            product.Price = productVm.Price;
+            product.PromotionPrice = productVm.PromotionPrice;
+            product.Warranty = productVm.Warranty;
+            product.Description = productVm.Description;
+            product.Content = productVm.Content;
+            product.HomeFlag = productVm.HomeFlag;
+            product.ViewCount = productVm.ViewCount;
+
+            product.CreatedDate = productVm.CreatedDate;
+            product.CreatedBy = productVm.CreatedBy;
+            product.UpdatedDate = productVm.UpdatedDate;
+            product.UpdatedBy = productVm.CreatedBy;
+            product.MetaKeyword = productVm.MetaKeyword;
+            product.MetaDescription = productVm.MetaDescription;
+            product.Status = productVm.Status;
+        }
     }
 }

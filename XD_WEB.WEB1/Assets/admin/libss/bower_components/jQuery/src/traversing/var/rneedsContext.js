@@ -1,8 +1,6 @@
-define([
+define( [
 	"../../core",
 	"../../selector"
-], function (jQuery) {
-	"use strict";
-
+], function( jQuery ) {
 	return jQuery.expr.match.needsContext;
-});
+} );

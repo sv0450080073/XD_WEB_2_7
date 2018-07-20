@@ -1,7 +1,5 @@
-define([
+define( [
 	"./document"
-], function (document) {
-	"use strict";
-
+], function( document ) {
 	return document.documentElement;
-});
+} );

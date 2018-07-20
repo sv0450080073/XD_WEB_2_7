@@ -1,69 +1,65 @@
-define([
+define( [
 	"../core",
 	"../var/rcssNum"
-], function (jQuery, rcssNum) {
-	"use strict";
+], function( jQuery, rcssNum ) {
 
-	function adjustCSS(elem, prop, valueParts, tween) {
-		var adjusted, scale,
-			maxIterations = 20,
-			currentValue = tween ?
-				function () {
-					return tween.cur();
-				} :
-				function () {
-					return jQuery.css(elem, prop, "");
-				},
-			initial = currentValue(),
-			unit = valueParts && valueParts[3] || (jQuery.cssNumber[prop] ? "" : "px"),
+function adjustCSS( elem, prop, valueParts, tween ) {
+	var adjusted,
+		scale = 1,
+		maxIterations = 20,
+		currentValue = tween ?
+			function() { return tween.cur(); } :
+			function() { return jQuery.css( elem, prop, "" ); },
+		initial = currentValue(),
+		unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
 
-			// Starting value computation is required for potential unit mismatches
-			initialInUnit = (jQuery.cssNumber[prop] || unit !== "px" && +initial) &&
-				rcssNum.exec(jQuery.css(elem, prop));
+		// Starting value computation is required for potential unit mismatches
+		initialInUnit = ( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
+			rcssNum.exec( jQuery.css( elem, prop ) );
 
-		if (initialInUnit && initialInUnit[3] !== unit) {
-			// Support: Firefox <=54
-			// Halve the iteration target value to prevent interference from CSS upper bounds (gh-2144)
-			initial = initial / 2;
+	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
 
-			// Trust units reported by jQuery.css
-			unit = unit || initialInUnit[3];
+		// Trust units reported by jQuery.css
+		unit = unit || initialInUnit[ 3 ];
 
-			// Iteratively approximate from a nonzero starting point
-			initialInUnit = +initial || 1;
+		// Make sure we update the tween properties later on
+		valueParts = valueParts || [];
 
-			while (maxIterations--) {
-				// Evaluate and update our best guess (doubling guesses that zero out).
-				// Finish if the scale equals or crosses 1 (making the old*new product non-positive).
-				jQuery.style(elem, prop, initialInUnit + unit);
-				if ((1 - scale) * (1 - (scale = currentValue() / initial || 0.5)) <= 0) {
-					maxIterations = 0;
-				}
-				initialInUnit = initialInUnit / scale;
-			}
+		// Iteratively approximate from a nonzero starting point
+		initialInUnit = +initial || 1;
 
-			initialInUnit = initialInUnit * 2;
-			jQuery.style(elem, prop, initialInUnit + unit);
+		do {
 
-			// Make sure we update the tween properties later on
-			valueParts = valueParts || [];
-		}
+			// If previous iteration zeroed out, double until we get *something*.
+			// Use string for doubling so we don't accidentally see scale as unchanged below
+			scale = scale || ".5";
 
-		if (valueParts) {
-			initialInUnit = +initialInUnit || +initial || 0;
+			// Adjust and apply
+			initialInUnit = initialInUnit / scale;
+			jQuery.style( elem, prop, initialInUnit + unit );
 
-			// Apply relative offset (+=/-=) if specified
-			adjusted = valueParts[1] ?
-				initialInUnit + (valueParts[1] + 1) * valueParts[2] :
-				+valueParts[2];
-			if (tween) {
-				tween.unit = unit;
-				tween.start = initialInUnit;
-				tween.end = adjusted;
-			}
-		}
-		return adjusted;
+		// Update scale, tolerating zero or NaN from tween.cur()
+		// Break the loop if scale is unchanged or perfect, or if we've just had enough.
+		} while (
+			scale !== ( scale = currentValue() / initial ) && scale !== 1 && --maxIterations
+		);
 	}
 
-	return adjustCSS;
-});
+	if ( valueParts ) {
+		initialInUnit = +initialInUnit || +initial || 0;
+
+		// Apply relative offset (+=/-=) if specified
+		adjusted = valueParts[ 1 ] ?
+			initialInUnit + ( valueParts[ 1 ] + 1 ) * valueParts[ 2 ] :
+			+valueParts[ 2 ];
+		if ( tween ) {
+			tween.unit = unit;
+			tween.start = initialInUnit;
+			tween.end = adjusted;
+		}
+	}
+	return adjusted;
+}
+
+return adjustCSS;
+} );

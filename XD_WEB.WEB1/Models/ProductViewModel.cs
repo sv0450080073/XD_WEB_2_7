@@ -4,7 +4,7 @@ namespace XD_WEB.WEB1.Models
 {
     public class ProductViewModel
     {
-        public long ID { set; get; }
+        public int ID { set; get; }
 
         public string Name { set; get; }
 
