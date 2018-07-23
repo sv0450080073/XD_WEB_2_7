@@ -15,6 +15,11 @@
                     url: "/productadd",
                     templateUrl: "/app/component/products/productAddView.html",
                     controller: "productAddController"
+            }).state('productedit',
+                {
+                    url: "/productedit/:id",
+                    templateUrl: "/app/component/products/productEditView.html",
+                    controller: "productEditController"
                 });
     }
 })();// bắt buộc phải có nha () ko có báo lổi đó 

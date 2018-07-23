@@ -143,6 +143,7 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             product.Content = productVm.Content;
             product.HomeFlag = productVm.HomeFlag;
             product.ViewCount = productVm.ViewCount;
+            product.Tags = productVm.Tags;
 
             product.CreatedDate = productVm.CreatedDate;
             product.CreatedBy = productVm.CreatedBy;
@@ -151,6 +152,7 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             product.MetaKeyword = productVm.MetaKeyword;
             product.MetaDescription = productVm.MetaDescription;
             product.Status = productVm.Status;
+           
         }
     }
 }
