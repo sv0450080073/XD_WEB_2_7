@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
     <link href="~/Assets/admin/libss/bower_components/toastr/toastr.css" rel="stylesheet" />
+    <link href="~/Assets/admin/libss/bower_components/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
     <!-- Theme style -->
     <link rel="stylesheet" href="/Assets/admin/css/AdminLTE.min.css">
     <link href="~/Assets/admin/css/custom.css" rel="stylesheet" />
@@ -135,7 +136,7 @@
                         </li>
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="/Assets/admin/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                 <span class="hidden-xs">Alexander Pierce</span>
                             </a>
@@ -166,7 +167,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="#" ng-click="logout()" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -208,12 +209,12 @@
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-dashboard"></i> <span>Trang chủ</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                     </li>
                     <li class="treeview">
-                        <a href="#">
+                        <a href="javascript:void(0);">
                             <i class="fa fa-files-o"></i>
                             <span>Sản phẩm </span>
                             <span class="label label-primary pull-right">4</span>
@@ -223,116 +224,8 @@
                             <li><a ui-sref="products"><i class="fa fa-circle-o"></i> Sản phẩm</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="../widgets.html">
-                            <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">Hot</small>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-pie-chart"></i>
-                            <span>Charts</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-laptop"></i>
-                            <span>UI Elements</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                            <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                            <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                            <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                            <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                            <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-edit"></i> <span>Forms</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                            <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                            <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-table"></i> <span>Tables</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../calendar.html">
-                            <i class="fa fa-calendar"></i> <span>Calendar</span>
-                            <small class="label pull-right bg-red">3</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../mailbox/mailbox.html">
-                            <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                            <small class="label pull-right bg-yellow">12</small>
-                        </a>
-                    </li>
-                    <li class="treeview active">
-                        <a href="#">
-                            <i class="fa fa-folder"></i> <span>Examples</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                            <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-                            <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                            <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                            <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                            <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                            <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                            <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-share"></i> <span>Multilevel</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                            <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
-                                        <ul class="treeview-menu">
-                                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../../documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-                    <li class="header">LABELS</li>
-                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+
+
                 </ul>
             </section>
             <!-- /.sidebar -->
@@ -527,6 +420,10 @@
     <script src="~/Assets/admin/libss/bower_components/ngBootbox/ngBootbox.js"></script>
     <script src="~/Assets/admin/libss/bower_components/ng-ckeditor/ng-ckeditor.js"></script>
     <script src="~/Assets/admin/libss/ckfinder/ckfinder.js"></script>
+    <script src="~/Assets/admin/libss/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="~/Assets/admin/libss/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+
+
 
     <!--Phần share của dự án -->
     <script src="~/app/share/modules/xd_web.common.js"></script>
@@ -534,13 +431,19 @@
     <script src="~/app/share/services/apiService.js"></script>
     <script src="~/app/share/directives/pagerDirective.js"></script>
     <script src="~/app/share/services/notificationService.js"></script>
+    <script src="~/app/share/services/authData.js"></script>
+    <script src="~/app/share/services/authenticationService.js"></script>
+    <script src="~/app/share/services/loginService.js"></script>
     <script src="~/app/share/services/commonService.js"></script>
+
 
     <!--Các thành phần của dự án -->
     <script src="~/app/component/products/products.module.js"></script>
     <script src="~/app/component/product_categories/productCategories.mudule.js"></script>
 
     <script src="~/app/app.js"></script>
+
+    <script src="~/app/component/home/rootController.js"></script>
 
     <script src="~/app/component/product_categories/productCategoryListController.js"></script>
     <script src="~/app/component/product_categories/productCategoryAddController.js"></script>
@@ -549,5 +452,8 @@
     <script src="~/app/component/products/productListController.js"></script>
     <script src="~/app/component/home/homeController.js"></script>
     <script src="~/app/component/products/productEditController.js"></script>
+
+    <script src="~/app/component/login/loginController.js"></script>
+
 </body>
 </html>

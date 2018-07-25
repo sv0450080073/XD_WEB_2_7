@@ -17,6 +17,8 @@ namespace XD_WEB.WEB1.Mappings
             CreateMap<ProductCategory, ProductCategoryViewModel>();
 
             CreateMap<ProductTag, ProductTagViewModel>();
+            CreateMap<Footer, FooterViewModel>();
+            CreateMap<Slide, SlideViewModel>();
         }
     }
 }

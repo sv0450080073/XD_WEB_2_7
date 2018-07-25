@@ -34,11 +34,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.format_tags = 'p;h1;h2;h3;pre';
 
 	// Simplify the dialog windows.
-    config.removeDialogTabs = 'image:advanced;link:advanced';
-
-    config.filebrowserBrowseUrl='/Assets/admin/libss/ckfinder/ckfinder.html',
-    config.filebrowserUploadUrl ='/Assets/admin/libss/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-    config.filebrowserWindowWidth='1000',
-    config.filebrowserWindowHeight='700'
-
+	config.removeDialogTabs = 'image:advanced;link:advanced';
 };
