@@ -144,6 +144,7 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             product.HomeFlag = productVm.HomeFlag;
             product.ViewCount = productVm.ViewCount;
             product.Tags = productVm.Tags;
+            product.HotFlag = productVm.HotFlag;
 
             product.CreatedDate = productVm.CreatedDate;
             product.CreatedBy = productVm.CreatedBy;

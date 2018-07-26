@@ -9,6 +9,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
     <title>Big shope A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
     <link href="/Assets/client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="/Assets/client/fontawesome-free-5.2.0-web/css/fontawesome.css" rel="stylesheet" />
+
     <!--theme-style-->
     <link href="/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!--//theme-style-->
@@ -22,24 +25,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
     <!--header-->
-   @{ Html.RenderAction("Header", "Home");}
+    @{ Html.RenderAction("Header", "Home");}
     <!---->
     <div class="container">
-       @RenderBody()
+        @RenderBody()
+        @{Html.RenderAction("Category", "Home");}
     </div>
-
     <!---->
-   @RenderSection("homeProducts", required: false)
+   
+    @{ Html.RenderAction("Footer", "Home");}
     <div class="clearfix"> </div>
-    </div>
-    @{ Html.RenderAction("Category", "Home");}
-    <div class="clearfix"> </div>
-    </div>
-
     <!---->
-    @{ Html.RenderAction("Footer","Home");}
 
-
-    @RenderSection("footerJS",required:false)
+    @RenderSection("footerJS", required: false)
 </body>
 </html>
