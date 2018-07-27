@@ -16,6 +16,7 @@
         {
             CreateProductCategoySample(context);
             CreateSlide(context);
+            CreatePage(context);
             //  This method will be called after migrating to the latest version.
 
             /*var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new XD_WEB_DBContext()));
@@ -84,6 +85,22 @@
                 };
                 context.Slides.AddRange(listSlide);
                 context.SaveChanges();
+            }
+        }
+        private void CreatePage(XD_WEB_DBContext context)
+        {
+            if (context.Pages.Count() == 0)
+            {
+                var page = new Page()
+                {
+                    Name="Giới thiệu",
+                    Alias = "gioi-thieu",
+                    Content = "Đây là trang web xử lý tốc độ cao ",
+                    Status = true
+                };
+            context.Pages.Add(page);
+            context.SaveChanges();
+
             }
         }
     }

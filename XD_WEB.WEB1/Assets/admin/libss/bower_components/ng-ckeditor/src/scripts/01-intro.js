@@ -6,4 +6,4 @@
     } else {
         return factory(angular);
     }
-}(angular || null, function(angular) {
+}(angular || null, function(angular) )

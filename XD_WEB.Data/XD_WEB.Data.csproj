@@ -80,6 +80,14 @@
     <Compile Include="Migrations\201807250640538_AddContentToSlide.Designer.cs">
       <DependentUpon>201807250640538_AddContentToSlide.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807260953425_AddMoreQuantity.cs" />
+    <Compile Include="Migrations\201807260953425_AddMoreQuantity.Designer.cs">
+      <DependentUpon>201807260953425_AddMoreQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807270330477_AddMoreAlias.cs" />
+    <Compile Include="Migrations\201807270330477_AddMoreAlias.Designer.cs">
+      <DependentUpon>201807270330477_AddMoreAlias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CredentialRepository.cs" />
@@ -137,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807250640538_AddContentToSlide.resx">
       <DependentUpon>201807250640538_AddContentToSlide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807260953425_AddMoreQuantity.resx">
+      <DependentUpon>201807260953425_AddMoreQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807270330477_AddMoreAlias.resx">
+      <DependentUpon>201807270330477_AddMoreAlias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

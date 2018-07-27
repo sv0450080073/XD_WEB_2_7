@@ -9,6 +9,15 @@ namespace XD_WEB.WEB1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+               name: "Search",
+               url: "tim-kiem.html",
+               defaults: new { controller = "Product", action = "Search", id = UrlParameter.Optional },
+               namespaces: new[] { "XD_WEB.WEB1.Controllers" }
+
+               );
+
             routes.MapRoute(
                name: "Login",
                url: "Login.html",
@@ -16,26 +25,30 @@ namespace XD_WEB.WEB1
                namespaces: new[] { "XD_WEB.WEB1.Controllers"}
                
                );
+            //điều hướng trang đơn lẻ
             routes.MapRoute(
-              name: "About",
-              url: "gioi-thieu.html",
-              defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional }
-             
+              name: "Page",
+              url: "trang/{alias}.html",
+              defaults: new { controller = "Page", action = "Index", alias = UrlParameter.Optional },
+              namespaces: new[] { "XD_WEB.WEB1.Controllers" }
+
           );
 
             routes.MapRoute(
                name: "ProductCategory",
                url: "{alias}.pc-{id}.html",
-               defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional }
-             
+               defaults: new {controller = "Product", action = "Category", id = UrlParameter.Optional },
+               namespaces: new[] { "XD_WEB.WEB1.Controllers" }
+
            );
 
           
             routes.MapRoute(
                name: "Product",
-               url: "{alias}.p-{id}.html",
-               defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional }
-             
+               url: "{alias}.p-{mid}.html",
+               defaults: new { controller = "Product", action = "Detail", mid = UrlParameter.Optional },
+               namespaces: new[] { "XD_WEB.WEB1.Controllers" }
+
            );
 
 

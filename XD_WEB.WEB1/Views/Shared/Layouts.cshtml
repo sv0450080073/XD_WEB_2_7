@@ -11,6 +11,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="/Assets/client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
     <link href="/Assets/client/fontawesome-free-5.2.0-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="/Assets/admin/libss/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css" rel="stylesheet" />
+
 
     <!--theme-style-->
     <link href="/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -20,8 +22,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!--//fonts-->
-    <script src="/Assets/client/js/jquery.min.js"></script>
-    <!--script-->
+
+
+
+
 </head>
 <body>
     <!--header-->
@@ -32,10 +36,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         @{Html.RenderAction("Category", "Home");}
     </div>
     <!---->
-   
+
     @{ Html.RenderAction("Footer", "Home");}
     <div class="clearfix"> </div>
     <!---->
+
+    <script src="~/Assets/client/js/jquery.min.js"></script>
+    <script src="~/Assets/admin/libss/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Assets/client/js/Common.js"></script>
+    <!--script-->
 
     @RenderSection("footerJS", required: false)
 </body>

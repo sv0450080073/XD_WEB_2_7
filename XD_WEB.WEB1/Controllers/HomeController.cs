@@ -48,18 +48,20 @@ namespace XD_WEB.WEB1.Controllers
 
         //footer
         [ChildActionOnly]
+        [OutputCache(Duration = 3600)]
         public ActionResult Footer()
         {
             var footerModel = _commonService.GetFooter();
             var footerViewModel = Mapper.Map<Footer, FooterViewModel>(footerModel);
 
-
+            ViewBag.Time = DateTime.Now.ToString("T");
             return PartialView(footerViewModel);
         }
 
 
         //Header
         [ChildActionOnly]
+        [OutputCache(Duration = 3600)]
         public ActionResult Header()
         {
             return PartialView();

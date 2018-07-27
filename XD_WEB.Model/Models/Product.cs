@@ -42,6 +42,8 @@ namespace XD_WEB.Model.Models
         public int? ViewCount { set; get; }
         public string Tags { set; get; }
 
+        public int Quantity{ set; get; }
+
         //khóa ngoại
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { set; get; }
