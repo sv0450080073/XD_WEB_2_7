@@ -17,6 +17,7 @@
             CreateProductCategoySample(context);
             CreateSlide(context);
             CreatePage(context);
+            CreateContactDetail(context);
             //  This method will be called after migrating to the latest version.
 
             /*var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new XD_WEB_DBContext()));
@@ -100,6 +101,30 @@
                 };
             context.Pages.Add(page);
             context.SaveChanges();
+
+            }
+        }
+
+
+        private void CreateContactDetail(XD_WEB_DBContext context)
+        {
+            if (context.ContactDetails.Count() == 0)
+            {
+                var page = new XD_WEB.Model.Models.ContactDetail()
+                {
+                    Name = "Shop thời trang",
+                    Address="236B Lê Văn Sỹ",
+                    Email="nkmanh1997@gmail.com",
+                    Lat= 10.7968635,
+                    Lng= 106.6665485,
+                    Phone="01658801935", 
+                   Other="",
+
+                   
+                    Status = true
+                };
+                context.ContactDetails.Add(page);
+                context.SaveChanges();
 
             }
         }

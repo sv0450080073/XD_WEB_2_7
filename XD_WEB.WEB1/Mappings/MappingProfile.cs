@@ -20,6 +20,8 @@ namespace XD_WEB.WEB1.Mappings
             CreateMap<Footer, FooterViewModel>();
             CreateMap<Slide, SlideViewModel>();
             CreateMap<Page, PageViewModel>();
+            CreateMap<ContactDetail, ContactDetailViewModel>();
+
         }
     }
 }

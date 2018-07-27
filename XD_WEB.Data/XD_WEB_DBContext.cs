@@ -36,6 +36,8 @@ namespace XD_WEB.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
 
+        public DbSet<ContactDetail> ContactDetails { set; get; }
+
         public static XD_WEB_DBContext Create()
         {
             return new XD_WEB_DBContext();

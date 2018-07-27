@@ -58,7 +58,7 @@ namespace XD_WEB.WEB1.Controllers
             return PartialView(footerViewModel);
         }
 
-
+         
         //Header
         [ChildActionOnly]
         [OutputCache(Duration = 3600)]

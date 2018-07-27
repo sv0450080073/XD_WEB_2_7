@@ -9,6 +9,13 @@ namespace XD_WEB.WEB1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+               name: "Contact",
+               url: "lien-he.html",
+               defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+               namespaces: new[] { "XD_WEB.WEB1.Controllers" }
+
+               );
 
             routes.MapRoute(
                name: "Search",
