@@ -10,6 +10,7 @@ namespace XD_WEB.Data.Repositories
     {
         public CredentialRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+            
         }
     }
 }

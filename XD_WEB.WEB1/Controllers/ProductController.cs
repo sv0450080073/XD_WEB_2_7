@@ -45,7 +45,7 @@ namespace XD_WEB.WEB1.Controllers
         //phân trang
         public ActionResult Category(int id, int page=1,string sort=" ")
         {
-            int pageSize = 20;
+            int pageSize =20;
             int totalRow = 0;
             var productModel = _productService.GetListProductByCategoryIdPaging(id, page, pageSize,sort, out totalRow);
             var productViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(productModel);

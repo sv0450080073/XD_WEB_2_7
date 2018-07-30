@@ -2,11 +2,9 @@
 
 @{
     var keyword = (string)ViewBag.Keyword;
-    ViewBag.Title = "Kết quả tìm kiếm cho từ khóa "+ keyword;
+    ViewBag.Title = "Kết quả tìm kiếm cho từ khóa " + keyword;
     Layout = "~/Views/Shared/Layouts.cshtml";
 }
-
-
 
 <div class="women-product">
     @if (Model.Count > 0)
@@ -29,7 +27,7 @@
         <div class="grid-product">
             @foreach (var product in Model.Items)
             {
-                var url = "/" + product.Alias + ".p-" + product.ID;
+                var url = "/" + product.Alias + ".p-" + product.ID + ".html";
                 <div class="product-grid">
                     <div class="content_box">
                         <a href="@url">
@@ -44,7 +42,6 @@
                     <h4><a href="@url">@product.Name </a></h4>
                     <p>@product.Description</p>
                     @(product.Price == 0 ? "Liên hệ" : product.Price.ToString("N2"))
-
                 </div>
             }
 
@@ -99,17 +96,11 @@
                     </ul>
                 </nav>
 
-
             }
-
         </div>
     }
     else
     {
         <div class="text-center">Không co bản ghi nào được tìm thấy.</div>
     }
-
-
 </div>
-
-

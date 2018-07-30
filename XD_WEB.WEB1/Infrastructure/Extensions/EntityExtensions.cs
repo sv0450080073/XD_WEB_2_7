@@ -1,4 +1,5 @@
-﻿using XD_WEB.Model.Models;
+﻿using System;
+using XD_WEB.Model.Models;
 using XD_WEB.WEB1.Models;
 
 namespace XD_WEB.Web.Infrastructure.Extensions
@@ -155,6 +156,18 @@ namespace XD_WEB.Web.Infrastructure.Extensions
             product.Status = productVm.Status;
             product.Quantity = productVm.Quantity;
            
+        }
+
+        public static void UpdateFeedback(this Feedback feedback,FeedbackViewModel feedbackVm)
+        {
+            feedback.ID = feedbackVm.ID;
+            feedback.Name = feedbackVm.Name;
+            feedback.Email = feedbackVm.Email;
+            feedback.Message = feedbackVm.Message;
+            feedback.Status= feedbackVm.Status;
+            feedback.CreatedDate = DateTime.Now;
+
+
         }
     }
 }
