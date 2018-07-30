@@ -12,6 +12,7 @@ using XD_WEB.WEB1.Models;
 namespace XD_WEB.Web.Api
 {
     [RoutePrefix("api/postcategory")]
+   //[Authorize]
     public class PostCategoryController : ApiControllerBase
     {
         private IPostCategoryService _postCategoryService;

@@ -8,9 +8,9 @@
             this.login = function (userName, password) {
                 deferred = $q.defer();
                 var data = "grant_type=password&username=" + userName + "&password=" + password;
-                $http.post('/oauth2/token', data, {
-                    headers:
-                        { 'Content-Type': 'application/x-www-form-urlencoded' }
+                $http.post('
+                        { 'Content-Type/oauth/token', data, {
+                    headers:': 'application/x-www-form-urlencoded' }
                 }).then(function (response) {
                     userInfo = {
                         accessToken: response.data.access_token,
@@ -25,6 +25,7 @@
                         authData.authenticationData.userName = "";
                         deferred.resolve(err);
                     }));
+                return deferred.promise;
                 
             }
 
@@ -34,4 +35,4 @@
                 authData.authenticationData.userName = "";
             }
         }]);
-})(angular.module('xd_web.common'));
+})(angular.module('xd_web.common'));*/

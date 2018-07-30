@@ -47,4 +47,4 @@
             this.init();
         }
     ]);
-})(angular.module('xd_web.common'));
+})(angular.module('xd_web.common'));*/

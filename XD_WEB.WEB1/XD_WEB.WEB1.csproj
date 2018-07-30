@@ -619,6 +619,7 @@
     <Content Include="app\share\services\commonService.js" />
     <Content Include="app\share\services\loginService.js" />
     <Content Include="app\share\services\notificationService.js" />
+    <Content Include="app\share\views\baseView.html" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\custom.css" />

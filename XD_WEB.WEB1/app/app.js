@@ -5,7 +5,7 @@
             'xd_web.product_categories',
             'xd_web.common'])
         .config(config);
-       // .config(configAuthentication);
+       //.config(configAuthentication);
 
     //tiêm
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -23,12 +23,10 @@
                     templateUrl: "/app/component/login/loginView.html",
                     controller: "loginController"
                 })*/
-
-
             .state('home',
             {
                 url: "/admin",
-               // parent:'base',
+             //  parent:'base',
                 templateUrl: "/app/component/home/homeView.html",
                 controller: "homeController"
             });

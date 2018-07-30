@@ -16,6 +16,7 @@ using XD_WEB.WEB1.Models;
 namespace XD_WEB.WEB1.Api
 {
     [RoutePrefix("api/product")] // điều hướng
+   // [Authorize]
     public class ProductController : ApiControllerBase
     {
         private IProductService _productService;

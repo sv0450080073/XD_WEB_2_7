@@ -12,7 +12,7 @@
         }
         //POST
         function post(url, data, success, failure) {
-          
+           // authenticationService.setHeader();
             $http.post(url, data).then(function (result) {
                 success(result);
             }, function (error) {

@@ -10,7 +10,7 @@ using XD_WEB.Web.Infrastructure.Core;
 namespace XD_WEB.WEB1.Api
 {
     [RoutePrefix("api/home")]
-
+   // [Authorize]
     public class HomeController : ApiControllerBase
     {
         IErrorService _errorService;

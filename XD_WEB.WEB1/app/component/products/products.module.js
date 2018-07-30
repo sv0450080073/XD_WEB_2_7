@@ -6,19 +6,16 @@
 
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider
-            
-
-
             .state('products',
             {
                 url: "/products",
-               // parent:'base',
+              
                 templateUrl: "/app/component/products/productListView.html",
                 controller: "productListController"
             }).state('productadd',
                 {
                     url: "/productadd",
-                   // parent:'base',
+                   //parent:'base',
                     templateUrl: "/app/component/products/productAddView.html",
                     controller: "productAddController"
             }).state('productedit',

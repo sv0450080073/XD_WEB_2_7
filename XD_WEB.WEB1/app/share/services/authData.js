@@ -5,10 +5,10 @@
 
         var authentication = {
             IsAuthenticated: false,
-            userName: ""
+            userName:""
         };
         authDataFactory.authenticationData = authentication;
 
         return authDataFactory;
     }]);
-})(angular.module('xd_web.common'));
+})(angular.module('xd_web.common'));*/

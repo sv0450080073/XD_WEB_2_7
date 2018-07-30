@@ -17,13 +17,13 @@
             .state('add_product_category',
                 {
                     url: "/add_product_category",
-                   // parent: 'base',
+                   //parent: 'base',
                     templateUrl: "/app/component/product_categories/productCategoryAddView.html",
                 controller: "productCategoryAddController"
             }).state('edit_product_category',
                 {
                     url: "/edit_product_category/:id",
-                    //parent: 'base',
+                   // parent: 'base',
                     templateUrl: "/app/component/product_categories/productCategoryEditView.html",
                     controller: "productCategoryEditController"
                 });
